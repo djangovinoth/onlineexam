@@ -1,0 +1,77 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form method="post">
+
+
+
+  {%csrf_token%}
+
+
+<div class="row">
+  <div class="col-md-12">
+  <div class="content-section">
+    <div class="row">
+    <div class="col-3">
+      {{ job_form.level|as_crispy_field }}
+    </div>
+    <div class="col-3">
+      {{ job_form.technology|as_crispy_field }}
+    </div>
+        </div>
+
+    <div class="col-6">
+    <label for="">Question</label>
+      {{job_form.media}}
+      {{ job_form.question }}
+    </div>
+
+
+
+
+  
+    <div class="col-3">
+      <label for="">ANSWER A </label>
+        {{job_form.media}}
+      {{ job_form.answera }}
+    </div>
+    <div class="col-3">
+      <label for="">ANSWER B </label>
+        {{job_form.media}}
+      {{ job_form.answerb }}
+    </div>
+    <div class="col-3">
+      <label for="">ANSWER C </label>
+        {{job_form.media}}
+      {{ job_form.answerc }}
+    </div>
+    <div class="col-3">
+      <label for="">ANSWER D </label>
+        {{job_form.media}}
+      {{ job_form.answerd }}
+    </div>
+    <div class="col-3">
+        {{ job_form.correctanswer|as_crispy_field }}
+    </div>
+
+
+
+
+      <button class="btn btn-outline-info btn-sm mt-1 mb-1" type="submit">Submit & Move Next Question</button>
+
+  </div>
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+</form>
+
+{%endblock%}

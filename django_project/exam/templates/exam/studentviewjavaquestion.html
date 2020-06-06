@@ -1,0 +1,171 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% if per.has_other_pages %}
+  <ul class="pagination">
+    {% if per.has_previous %}
+      <li><a class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" href="?page={{ per.previous_page_number }}">Previous</a></li>
+    {% else %}
+      <li class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1 disabled"><span>First</span></li>
+    {% endif %}
+    {% for i in per.paginator.page_range %}
+      {% if per.number == i %}
+        <li class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1 active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if per.has_next %}
+      <li><a class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" href="?page={{ per.next_page_number }}">Next</a></li>
+    {% else %}
+      <li class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1 disabled"><span>Last</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+
+
+<form  method="POST">
+
+      {% csrf_token %}
+
+{% for j in per%}
+
+
+      <div class="row">
+<div class="col-md-6">
+  <div class="content-section">
+
+
+          <br>
+
+    <p class='text-muted'>{{j.level}} - {{j.technology}} - Exam
+
+
+
+    </p>
+    <p class='text-muted'>Please Read You Questions Carefully </p>
+  </div>
+
+  <div class="content-section">
+
+
+
+
+          <br><br>
+
+    <p class='text-muted'> {{j.question|safe }}
+    </p>
+
+  </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+ <div class="col-md-6">
+
+
+
+
+
+   <div class="content-section">
+     <p class='text-muted'>Your Options Are: </p>
+      <label class='text-muted' for="">Answer A</label>
+     <div class="content-section">
+       <div class="row">
+         <div class="col-md-1">
+        <input type="radio" name="stdans" value="A">
+             </div>
+              <div class="col-md-6">
+
+       <p class='text-muted'>{{j.answera|safe}}
+
+       </p>
+
+             </div>
+     </div>
+   </div>
+   <label class='text-muted' for="">Answer B</label>
+  <div class="content-section">
+    <div class="row">
+      <div class="col-md-1">
+     <input type="radio" name="stdans" value="B">
+          </div>
+           <div class="col-md-6">
+
+    <p class='text-muted'>{{j.answerb|safe}}
+
+    </p>
+
+          </div>
+  </div>
+</div>
+
+<label class='text-muted'  for="">Answer C</label>
+<div class="content-section">
+ <div class="row">
+   <div class="col-md-1">
+  <input type="radio" name="stdans" value="C">
+       </div>
+        <div class="col-md-6">
+
+ <p class='text-muted'>{{j.answerc|safe}}
+
+ </p>
+
+       </div>
+</div>
+</div>
+<label class='text-muted' for="">Answer D</label>
+<div class="content-section">
+ <div class="row">
+   <div class="col-md-1">
+  <input type="radio" name="stdans" value="D">
+       </div>
+        <div class="col-md-6">
+
+ <p class='text-muted'>{{j.answerd|safe}}
+
+ </p>
+
+       </div>
+</div>
+</div>
+
+
+
+  </div>
+  <input type="hidden" name="qid" value="{{j.qid}}">
+  <input type="hidden" name="level" value="{{j.level}}">
+  <input type="hidden" name="technology" value="{{j.technology}}">
+  <button class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" type="submit" name="button">Submit</button>
+  {% if per.has_next %}
+    <a class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" href="?page={{ per.next_page_number }}">Move To Next Question</a>
+  {% else %}
+    <li class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1 disabled"><span>You Are Done</span></li>
+  {% endif %}
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+{%endfor%}
+
+
+</form>
+
+{%endblock%}

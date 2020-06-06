@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="col-md-6">
+  <div class="content-section">
+
+
+          <br>
+    <p class='text-muted'>View Your exam level.
+      <ul class="list-group">
+        {%for j in jobset%}
+        <li class="list-group-item list-group-item-light"><a href="{%url 'view-java-questions' level=j.level technology=technology%}">{{j.level}}</a></li>
+
+        {%endfor%}
+      </ul>
+    </p>
+  </div>
+ </div>
+
+
+
+
+
+
+
+
+{%endblock%}

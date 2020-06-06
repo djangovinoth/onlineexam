@@ -1,0 +1,98 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form method="post">
+
+
+
+  {%csrf_token%}
+
+
+<div class="row">
+  <div class="col-md-12">
+  <div class="content-section">
+    <div class="row">
+    <div class="col-3">
+      <label for="">Level*</label>
+      <select class="form-control select form-control" name="level">
+        <option value={{jobset.level}}>{{jobset.level}}</option>
+      </select>
+      <!-- <input type="text" name="level" value="{jobset.level}"> -->
+      <!-- {{ job_form.level|as_crispy_field }} -->
+    </div>
+    <div class="col-3">
+      <label for="">Technology*</label>
+      <select class="form-control select form-control" name="technology" >
+        <option value={{jobset.technology}}>{{jobset.technology}}</option>
+      </select>
+      <!-- <input type="text" name="level" value="{jobset.level}"> -->
+      <!-- {{ job_form.level|as_crispy_field }} -->
+    </div>
+
+
+
+
+        </div>
+
+    <div class="col-6 mt-4">
+      <label for="">Question*</label>
+      <textarea name="question" rows="8" cols="80" class="form-control textarea form-control">{{jobset.question}}</textarea>
+
+    </div>
+
+
+
+
+    <div class="row">
+    <div class="col-3 mt-4">
+      <input type="text" name="answera"  class=" form-control" value={{jobset.answera}}>
+      <!-- {{ job_form.answera|as_crispy_field }} -->
+    </div>
+    <div class="col-3 mt-4">
+      <input type="text" name="answerb" class=" form-control" value={{jobset.answerb}}>
+
+        <!-- {{ job_form.answerb|as_crispy_field }} -->
+    </div>
+    <div class="col-3 mt-4">
+      <input type="text" name="answerc" class=" form-control" value={{jobset.answerc}}>
+
+         <!-- {{ job_form.answerc|as_crispy_field }} -->
+    </div>
+    <div class="col-3 mt-4">
+      <input type="text" name="answerd" class=" form-control" value={{jobset.answerd}}>
+
+<!-- {{ job_form.answerd|as_crispy_field }} -->
+    </div>
+    <div class="col-3 mt-4">
+      <select class="form-control select form-control" name="correctanswer" >
+        <option value={{jobset.correctanswer}}>{{jobset.correctanswer}}</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+      </select>
+
+        <!-- {{ job_form.correctanswer|as_crispy_field }} -->
+    </div>  </div>
+
+
+
+
+      <button class="btn btn-outline-info btn-sm mt-4 mb-1" type="submit">Submit & Move Next Question</button>
+
+  </div>
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+</form>
+
+{%endblock%}

@@ -1,0 +1,127 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% if per.has_other_pages %}
+  <ul class="pagination">
+    {% if per.has_previous %}
+      <li><a class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" href="?page={{ per.previous_page_number }}">Previous</a></li>
+    {% else %}
+      <li class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1 disabled"><span>First</span></li>
+    {% endif %}
+    {% for i in per.paginator.page_range %}
+      {% if per.number == i %}
+        <li class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1 active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if per.has_next %}
+      <li><a class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" href="?page={{ per.next_page_number }}">Next</a></li>
+    {% else %}
+      <li class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1 disabled"><span>Last</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+
+
+
+{% for j in per%}
+
+
+      <div class="row">
+<div class="col-md-6">
+  <div class="content-section">
+
+
+          <br>
+
+    <p class='text-muted'>{{j.level}} Exam
+
+
+
+    </p>
+  </div>
+
+  <div class="content-section">
+    <a  class="btn btn-outline-info btn-sm mt-1 mb-1" href="{%url 'edit-questions' level=j.level technology=j.technology qid=j.qid%}">Edit</a>
+    <a  class="btn btn-outline-danger btn-sm mt-1 mb-1" href="{%url 'delete-questions' level=j.level technology=j.technology qid=j.qid%}">Delete</a>
+
+          <br><br>
+          <p>Please Read You Questions Carefully </p>
+    <p class='text-muted'> {{j.question|safe }}
+    </p>
+
+  </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+ <div class="col-md-6">
+
+
+
+
+
+   <div class="content-section">
+     <p>Your Options Are: </p>
+     <div class="content-section">
+
+
+             <br>
+
+       <p class='text-muted'>{{j.answera|safe}}
+       </p>
+     </div>
+   <div class="content-section">
+
+
+           <br>
+
+     <p class='text-muted'>{{j.answerb|safe}}
+     </p>
+   </div>
+   <div class="content-section">
+
+
+           <br>
+
+     <p class='text-muted'>{{j.answerc|safe}}
+     </p>
+   </div>
+   <div class="content-section">
+
+
+           <br>
+
+     <p class='text-muted'>{{j.answerd|safe}}
+     </p>
+   </div>
+
+
+
+  </div></div>
+
+
+
+</div>
+
+
+
+
+
+
+{%endfor%}
+
+
+
+
+{%endblock%}
