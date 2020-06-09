@@ -9,8 +9,9 @@ urlpatterns = [
     path('view-java-questions/<str:level>/<str:technology>/', views.view_java_questions, name='view-java-questions'),
     path('show_levels/<str:technology>/', views.show_levels, name='show_levels'),
     path('student_show_levels/<str:technology>/', views.student_show_levels, name='student_show_levels'),
-    path('student_view_java_questions/<str:level>/<str:technology>/<str:qid>', views.student_view_java_questions, name='student_view_java_questions'),
-    
+    path('student_view_java_questions/<str:level>/<str:technology>/<str:attemptcount>/<str:qid>/', views.student_view_java_questions, name='student_view_java_questions'),
+    path('student_attempts/<str:level>/<str:technology>', views.student_attempts, name='student_attempts'),
+    path('student_view_java_questions0/<str:level>/<str:technology>/<str:attemptcount>/<str:qid>/', views.student_view_java_questions0, name='student_view_java_questions0'),
 
 
 ]

@@ -29,8 +29,13 @@ class Questions(models.Model):
 class Answers(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    attemptid=models.CharField(max_length=100,default=True)
+    attemptid=models.IntegerField()
     level=models.CharField(max_length=100,default=True)
     technology=models.CharField(max_length=100,default=True)
     qid=models.CharField(max_length=100,default=True)
     stdanswer=models.CharField(max_length=100,default=True)
+    created_at=models.DateTimeField(blank=True,null=True)
+    updated_at=models.DateTimeField(blank=True,null=True)
+    complted_at=models.DateTimeField(blank=True,null=True)
+    due_at=models.DateTimeField(blank=True,null=True)
+    status=models.CharField(max_length=100,default='NotStarted')

@@ -1,0 +1,70 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="col-md-12">
+  <div class="content-section">
+    <a class="btn btn-outline-info btn-sm mt-1 mb-1" href="{%url 'student_view_java_questions0' level=level technology=technology attemptcount=attemptcount qid='NONE'%}">Start You New Attempt</a>
+
+
+          <br>  <br>
+
+          {%if dic%}
+    <p class='text-muted'><em>Your so far attempts are:</em>
+
+      <table class="table-striped table-sm table-bordered table-responsive-sm table-hover mt-2">
+        <tbody>
+          <thead>
+            <th><em><small><strong>ATTEMPT</strong></small></em></th>
+            <th><em><small><strong>Started At</strong></small></em></th>
+              <th><em><small><strong>Updated At</strong></small></em></th>
+              <th><em><small><strong>Completed At</strong></small></em></th>
+                <th><em><small><strong>Due Date</strong></small></em></th>
+                    <th><em><small><strong>Completed Test</strong></small></em></th>
+                    <th><em><small><strong>Status</strong></small></em></th>
+                      <th><em><small><strong>View Report</strong></small></em></th>
+                    <th><em><small><strong>Result Score</strong></small></em></th>
+
+          </thead>
+          {%for a in dic%}
+          <tr>
+            <td><a class="btn btn-outline-primary  btn-block" href="{%url 'student_view_java_questions0' level=level technology=technology attemptcount=a.attemptid qid='NONE'%}"><small>ATTEMPT-{{a.attemptid}}</small></a></td>
+            <td><small>{{a.created}}</small></td>
+            <td><small>{{a.updated}}</small></td>
+            <td><small>{{a.completed}}</small></td>
+            <td><small>NA</small></td>
+
+
+
+              <td><small>{{a.ratio}}</small></td>
+              <td><small>{{a.status}} - {{a.score}}%</small></td>
+              <td></td>
+                <td><small>{{a.totalscore}}%</small></td>
+            </tr>
+            {%endfor%}
+            <tbody>
+
+
+            </table>
+
+
+
+    </p>
+    {%else%}
+    <p class='text-muted'><em>You dont have any attempts kindly start your test:</em>
+
+{%endif%}
+
+
+  </div>
+ </div>
+
+
+
+
+
+
+
+
+{%endblock%}

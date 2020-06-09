@@ -146,11 +146,18 @@
   <input type="hidden" name="qid" value="{{j.qid}}">
   <input type="hidden" name="level" value="{{j.level}}">
   <input type="hidden" name="technology" value="{{j.technology}}">
-  <button class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" type="submit" name="button">Submit</button>
+
   {% if per.has_next %}
+    <input type="hidden" name="status" value="inprogress">
+    <button class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" type="submit" name="button" >Save You Answer</button>
     <a class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" href="?page={{ per.next_page_number }}">Move To Next Question</a>
+
+    <!-- <a class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" href="?page={{ per.next_page_number }}" onclick="this.form.submit()" >Move To Next Question...</a> -->
+
   {% else %}
-    <li class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1 disabled"><span>You Are Done</span></li>
+    <input type="hidden" name="status" value="completed">
+    <button class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" type="submit" name="button">Complete Your Test</button>
+
   {% endif %}
 </div>
 

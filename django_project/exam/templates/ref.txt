@@ -1,0 +1,12 @@
+Open anacond terminal
+
+(base) Vinoth-Kumar-T:django_project e11$ python3 manage.py runserver
+(base) Vinoth-Kumar-T:django_project e11$ python3 -m pip install Django
+^C(base) Vinoth-Kumar-T:django_project e11$ pip3 install --user django-crispy-forms
+^[[A^[[A^C(base) Vinoth-Kumar-T:django_project e11$ pip install --user django-crispy-forms
+(base) Vinoth-Kumar-T:django_project e11$ python3 manage.py runserver
+^C(base) Vinoth-Kumar-T:django_project e11$ pip install django-ckeditor
+(base) Vinoth-Kumar-T:django_project e11$ python3 manage.py runserver
+^C(base) Vinoth-Kumar-T:django_project e11$ python3 manage.py runserver
+^C(base) Vinoth-Kumar-T:django_project e11$ pip install django-richtextfield
+(base) Vinoth-Kumar-T:django_project e11$ python3 manage.py runserver
