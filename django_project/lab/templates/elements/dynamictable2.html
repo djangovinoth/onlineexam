@@ -1,0 +1,90 @@
+{% extends "lab/labhome.html" %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+
+
+<div class="col-md-8 mt-4" style="text-align:center">
+      <p >Dynamic Table</p>
+<div class="content-section">
+
+
+
+<form>
+  <div class="row">
+
+<div class="col-md-4">
+    <input class="form-control"  type="text" id="name" placeholder="Name">
+      </div>
+
+<div class="col-md-4">
+    <input class="form-control"  type="text" id="email" placeholder="Email Address">
+          </div>
+    <div class="col-md-2">
+  <input   type="button" class="add-row btn btn-info" value="Add Row">
+        </div>
+    <div class="col-md-2">
+        <button  type="button" class="delete-row btn btn-info">Delete Row</button>
+  </div>
+    </div>
+</form>
+
+<hr>
+<table class="table">
+<thead class="bg-info">
+        <tr>
+            <th scope="col">Select</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td scope="col"><input type="checkbox" name="record"></td>
+            <td scope="col">user 1</td>
+            <td scope="col">user1@mail.com</td>
+        </tr>
+        <tr>
+            <td scope="col"><input type="checkbox" name="record"></td>
+            <td scope="col">user2</td>
+            <td scope="col">user2@mail.com</td>
+        </tr>
+        <tr>
+            <td scope="col"><input type="checkbox" name="record"></td>
+            <td scope="col">user3</td>
+            <td scope="col">user3@mail.com</td>
+        </tr>
+    </tbody>
+</table>
+
+<br><br><br>
+  </div>
+
+ </div>
+
+{%endblock%}
+
+
+
+{%block script%}
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+  $(document).ready(function(){
+      $(".add-row").click(function(){
+          var name = $("#name").val();
+          var email = $("#email").val();
+          var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td><td>" + email + "</td></tr>";
+          $("table tbody").append(markup);
+      });
+
+      // Find and remove selected table rows
+      $(".delete-row").click(function(){
+          $("table tbody").find('input[name="record"]').each(function(){
+            if($(this).is(":checked")){
+                  $(this).parents("tr").remove();
+              }
+          });
+      });
+  });
+</script>
+{%endblock%}

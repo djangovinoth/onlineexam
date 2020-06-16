@@ -1,0 +1,78 @@
+{% extends "lab/labhome.html" %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+
+
+<div class="row">
+
+
+<div class="col-md-6">
+<div class="content-section">
+    <p style="text-align:center">Simple date picker</p>
+    <hr>
+    <br><br>
+    <h8>Click the following input to see the result: </h8>
+    <br><br>
+    <p>Date: <input type="text" id="datepicker"></p>
+
+          <br><br>
+  </div>  </div>
+
+
+
+  <div class="col-md-6">
+  <div class="content-section">
+    <p style="text-align:center">Date picker with resticted Date Range</p>
+      <hr>
+      <br><br>
+      <h8>Click the following input to see the result: </h8>
+      <br><br>
+      <p>Date: <input type="text" id="datepicker1"></p>
+
+            <br><br>
+    </div>  </div>
+
+    <div class="col-md-6">
+    <div class="content-section">
+        <p style="text-align:center">Date picker with Weeks count</p>
+        <hr>
+        <br><br>
+        <h8>Click the following input to see the result: </h8>
+        <br><br>
+        <p>Date: <input type="text" id="datepicker2"></p>
+
+              <br><br>
+      </div>  </div>
+
+
+
+</div>
+
+
+{%endblock%}
+
+{%block script%}
+
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker2" ).datepicker({
+      showWeek: true,
+      firstDay: 1
+    });
+
+    $( "#datepicker1" ).datepicker({ minDate: -20, maxDate: "+1M +10D" });
+
+    $( "#datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true
+    });
+  } );
+  </script>
+
+{%endblock%}

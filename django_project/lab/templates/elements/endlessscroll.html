@@ -1,0 +1,43 @@
+{% extends "lab/labhome.html" %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+
+
+
+
+<div id="lipsum">
+
+{%for i in arr%}
+  <hr>
+  <p>
+
+    VCENTRY {{i}}
+
+      </p>
+
+
+
+{%endfor%}
+
+</div>
+
+
+
+
+
+{%endblock%}
+
+
+
+{%block script%}
+
+
+<script>
+  $(window).scroll(function() {
+    if ($(window).scrollTop() >= $(document).height() - $(window).height() - 100) {
+      $('#lipsum').append('<br><hr><p ">You have reached last seach..You can nt stop scroll it will keep on srolling</p>');
+    }
+  });
+</script>
+
+{%endblock%}

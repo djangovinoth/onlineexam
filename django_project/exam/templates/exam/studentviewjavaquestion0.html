@@ -453,32 +453,35 @@
     {% if per.has_next %}
       <input type="hidden" name="status" value="inprogress">
 
-          <div class="col-md-3">
-              {%if not submit%}
-
-      <button class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" type="submit" name="button">Save Your Answer</button>
-
-
-              {% endif %}
-              {%if submit%}
-
-              <button class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" type="submit" name="button" >Update You Answer</button>
-                {% endif %}
+                <div class="col-md-3">
+                  {%if not submit%}
+                  {%if not compstatus%}
+                    <button class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" type="submit" name="button">Save Your Answer</button>
+                  {% endif %}  {% endif %}
+                {%if submit%}
+                {%if not compstatus%}
+                <button class="btn btn-outline-warning mb-4 btn-sm mt-1 mb-1" type="submit" name="button" >Update You Answer</button>
+                {% endif %}        {% endif %}
                 </div>
 
 
-        <div class="col-md-3">
-                {%if submit%}
-      <a class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" href="?page={{ per.next_page_number }}">Move To Next Question ---></a>
-          {% endif %}
-        </div>
+                <div class="col-md-3">
+
+                  <a class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" href="?page={{ per.next_page_number }}">Move To Next Question ---></a>
+
+              </div>
 
       <!-- <a class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" href="?page={{ per.next_page_number }}" onclick="this.form.submit()" >Move To Next Question...</a>  -->
 
     {% else %}
       <input type="hidden" name="status" value="completed">
         <div class="col-md-3">
+
+          {%if not compstatus%}
       <button class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" type="submit" name="button">Complete Your Test</button>
+        {%else%}
+          <p class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1">You Are Done Thank You</p>
+      {%endif%}
   </div>
     {% endif %}
         </div>

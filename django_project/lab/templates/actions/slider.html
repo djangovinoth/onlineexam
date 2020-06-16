@@ -1,0 +1,111 @@
+{% extends "lab/labhome.html" %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+
+<div class="row">
+
+
+<div class="col-md-6">
+  <div class="content-section">
+    <p style="text-align:center"><small><b>Slider 1 Example</b></small></p>
+    <hr>
+      <br>
+      <br>
+<div id="slider"></div>
+<br>
+<br>
+  </div>  </div>
+
+
+  <div class="col-md-6">
+
+    <div class="content-section">
+      <p style="text-align:center"><small><b>Slider 2 Example</b></small></p>
+    <hr>
+<br>
+<br>
+    <div id="slider1">
+      <div id="custom-handle" class="ui-slider-handle"></div>
+    </div>
+    <br>
+    <br>
+    </div>
+  </div>
+
+    <div class="col-md-6">
+      <div class="content-section">
+        <p style="text-align:center"><small><b>Slider 3 Example</b></small></p>
+    <hr>
+      <p>
+        <label for="amount">Volume:</label>
+        <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+      </p>
+
+      <div id="slider-vertical" style="height:200px;"></div>
+      </div>
+  </div>
+
+</div>
+
+
+
+{%endblock%}
+
+
+
+{%block script%}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#slider" ).slider();
+  } );
+
+  </script>
+
+
+  <style>
+  #custom-handle {
+    width: 3em;
+    height: 1.6em;
+    top: 50%;
+    margin-top: -.8em;
+    text-align: center;
+    line-height: 1.6em;
+  }
+  </style>
+
+  <script>
+  $( function() {
+    var handle = $( "#custom-handle" );
+    $( "#slider1" ).slider({
+      create: function() {
+        handle.text( $( this ).slider( "value" ) );
+      },
+      slide: function( event, ui ) {
+        handle.text( ui.value );
+      }
+    });
+  } );
+  </script>
+
+  <script>
+  $( function() {
+    $( "#slider-vertical" ).slider({
+      orientation: "vertical",
+      range: "min",
+      min: 0,
+      max: 100,
+      value: 60,
+      slide: function( event, ui ) {
+        $( "#amount" ).val( ui.value );
+      }
+    });
+    $( "#amount" ).val( $( "#slider-vertical" ).slider( "value" ) );
+  } );
+  </script>
+
+
+{%endblock%}

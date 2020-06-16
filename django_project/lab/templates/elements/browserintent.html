@@ -1,0 +1,87 @@
+{% extends "lab/labhome.html" %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+<div class="row">
+
+
+<div class="col-md-6 mt-4">
+<div class="content-section" >
+
+
+
+<div id="warning">
+  <br><br><br>
+<p >move your cursor above the page or near the close tab to see Subscribe news letter as browser intent popup.</p>
+<br><br><br>
+</div>
+
+<div class="modal fade" id="warning" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header text-center">
+<h4 class="modal-title w-100 font-weight-bold">Subscribe</h4>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="container register-form">
+<div class="form">
+<div class="note">
+<p>Subscribe Our Newsletter</p>
+</div>
+<div class="form-content">
+<div class="row">
+<div class="col-md-12">
+<div class="form-group">
+<input type="email" class="form-control" placeholder="Your Email *" value=""/>
+</div>
+</div>
+</div>
+<button type="button" class="btn btn-info">Submit</button>
+<br>
+<br>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+ </div></div>
+</div>
+
+
+
+
+
+
+{%endblock%}
+
+
+
+{%block script%}
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="http://tbz.alokitechnologies.com/js/jquery.exitintent.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<script type="text/javascript">
+  var n = 1;
+  $(function() {
+  $.exitIntent('enable');
+  $(document).bind('exitintent', function() {
+  if(n == 1){
+  $("#warning").slideDown();
+  $('.modal').modal({
+  show: true
+  });
+  n++;
+  }
+  n++;
+  });
+  });
+
+ </script>
+
+{%endblock%}

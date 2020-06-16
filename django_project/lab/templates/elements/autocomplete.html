@@ -1,0 +1,334 @@
+{% extends "lab/labhome.html" %}
+{% load static %}
+{%block title %}Add or Remove{%endblock%}
+{%block content%}
+
+<div class="row">
+
+
+<div class="col-md-6">
+<div class="content-section" style="text-align:center">
+  <p>Simple Auto complete</p>
+  <hr>
+    <br>
+  <div class="ui-widget">
+    <label for="tags1">Tags: </label>
+    <input id="tags1">
+  </div>
+  <br>
+          <br><br>
+  </div>  </div>
+
+
+
+  <div class="col-md-6">
+  <div class="content-section" style="text-align:center">
+    <p>Tag based auto complete</p>
+    <hr>
+      <br>
+    <div class="ui-widget">
+  <label for="tags">Tag programming languages: </label>
+  <input id="tags" size="50">
+</div>
+  <br>
+
+
+            <br><br>
+    </div>  </div>
+
+
+
+
+    <div class="col-md-6">
+    <div class="content-section" style="text-align:center">
+      <p>Category based auto complete</p>
+      <hr>
+
+  <br>
+      <label for="search">Search: </label>
+    <input id="search">
+
+
+<br><br><br>
+              <br><br>
+      </div>  </div>
+
+
+
+
+      <div class="col-md-6">
+      <div class="content-section" style="text-align:center">
+        <p>custom and result based auto complete</p>
+        <hr>
+
+  <br>
+        <div id="project-label">Select a project (type "j" for a start):</div>
+<!-- <img id="project-icon" src="images/transparent_1x1.png" class="ui-state-default" alt=""> -->
+<input id="project">
+<input type="hidden" id="project-id">
+<p id="project-description"></p>
+
+
+
+
+                <br><br>
+        </div>  </div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+{%endblock%}
+
+{%block script%}
+
+<style>
+
+  #project-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+  #project-icon {
+    float: left;
+    height: 32px;
+    width: 32px;
+  }
+  #project-description {
+    margin: 0;
+    padding: 0;
+  }
+
+  .ui-autocomplete-category {
+      font-weight: bold;
+      padding: .2em .4em;
+      margin: .8em 0 .2em;
+      line-height: 1.5;
+    }
+
+
+  </style>
+
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <script>
+  $( function() {
+
+
+
+
+
+    var projects = [
+          {
+            value: "jquery",
+            label: "jQuery",
+            desc: "the write less, do more, JavaScript library",
+            icon: "jquery_32x32.png"
+          },
+          {
+            value: "jquery-ui",
+            label: "jQuery UI",
+            desc: "the official user interface library for jQuery",
+            icon: "jqueryui_32x32.png"
+          },
+          {
+            value: "sizzlejs",
+            label: "Sizzle JS",
+            desc: "a pure-JavaScript CSS selector engine",
+            icon: "sizzlejs_32x32.png"
+          }
+        ];
+
+        $( "#project" ).autocomplete({
+          minLength: 0,
+          source: projects,
+          focus: function( event, ui ) {
+            $( "#project" ).val( ui.item.label );
+            return false;
+          },
+          select: function( event, ui ) {
+            $( "#project" ).val( ui.item.label );
+            $( "#project-id" ).val( ui.item.value );
+            $( "#project-description" ).html( ui.item.desc );
+            $( "#project-icon" ).attr( "src", "images/" + ui.item.icon );
+
+            return false;
+          }
+        })
+        .autocomplete( "instance" )._renderItem = function( ul, item ) {
+          return $( "<li>" )
+            .append( "<div>" + item.label + "<br>" + item.desc + "</div>" )
+            .appendTo( ul );
+        };
+
+
+
+      // lll
+
+
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    function split( val ) {
+      return val.split( /,\s*/ );
+    }
+    function extractLast( term ) {
+      return split( term ).pop();
+    }
+
+    $( "#tags" )
+      // don't navigate away from the field on tab when selecting an item
+      .on( "keydown", function( event ) {
+        if ( event.keyCode === $.ui.keyCode.TAB &&
+            $( this ).autocomplete( "instance" ).menu.active ) {
+          event.preventDefault();
+        }
+      })
+      .autocomplete({
+        minLength: 0,
+        source: function( request, response ) {
+          // delegate back to autocomplete, but extract the last term
+          response( $.ui.autocomplete.filter(
+            availableTags, extractLast( request.term ) ) );
+        },
+        focus: function() {
+          // prevent value inserted on focus
+          return false;
+        },
+        select: function( event, ui ) {
+          var terms = split( this.value );
+          // remove the current input
+          terms.pop();
+          // add the selected item
+          terms.push( ui.item.value );
+          // add placeholder to get the comma-and-space at the end
+          terms.push( "" );
+          this.value = terms.join( ", " );
+          return false;
+        }
+      });
+
+
+
+
+
+
+
+
+
+
+    // ll
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#tags1" ).autocomplete({
+      source: availableTags
+    });
+
+
+
+
+
+
+    $.widget( "custom.catcomplete", $.ui.autocomplete, {
+      _create: function() {
+        this._super();
+        this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
+      },
+      _renderMenu: function( ul, items ) {
+        var that = this,
+          currentCategory = "";
+        $.each( items, function( index, item ) {
+          var li;
+          if ( item.category != currentCategory ) {
+            ul.append( "<li class='ui-autocomplete-category'>" + item.category + "</li>" );
+            currentCategory = item.category;
+          }
+          li = that._renderItemData( ul, item );
+          if ( item.category ) {
+            li.attr( "aria-label", item.category + " : " + item.label );
+          }
+        });
+      }
+    });
+    var data = [
+      { label: "anders", category: "" },
+      { label: "andreas", category: "" },
+      { label: "antal", category: "" },
+      { label: "annhhx10", category: "Products" },
+      { label: "annk K12", category: "Products" },
+      { label: "annttop C13", category: "Products" },
+      { label: "anders andersson", category: "People" },
+      { label: "andreas andersson", category: "People" },
+      { label: "andreas johnson", category: "People" }
+    ];
+
+    $( "#search" ).catcomplete({
+      delay: 0,
+      source: data
+    });
+
+
+
+
+  } );
+  </script>
+
+
+
+{%endblock%}

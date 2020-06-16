@@ -1,0 +1,183 @@
+{% extends "lab/labhome.html" %}
+
+{%block title %}Double Click{%endblock%}
+
+
+
+{%block content%}
+<div class="col-md-8">
+<div class="content-section">
+
+  <p style="text-align:center"><small><b>Mouse Hover Example </b></small></p>
+  <hr>
+  <br><br>
+<nav>
+  <ul class="mousenav">
+    <li><a href="#">About</a></li>
+    <li><a href="#">Portfolio</a>
+      <ul>
+        <li><a href="#">item</a></li>
+        <li><a href="#">item</a></li>
+        <li><a href="#">item</a></li>
+        <li><a href="#">item</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Resume</a>
+      <ul>
+        <li><a href="#">item a lonng submenu</a></li>
+        <li><a href="#">item</a>
+          <ul>
+            <li><a href="#">Ray</a></li>
+            <li><a href="#">Veronica</a></li>
+            <li><a href="#">Bushy</a></li>
+            <li><a href="#">Havoc</a></li>
+          </ul>
+        </li>
+        <li><a href="#">item</a></li>
+        <li><a href="#">item</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Download</a></li>
+    <li><a href="#">Rants</a>
+      <ul>
+        <li><a href="#">item</a></li>
+        <li><a href="#">item</a></li>
+        <li><a href="#">item</a></li>
+        <li><a href="#">item</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<br><br><br><br><br><br><br><br><br>
+</div>
+</div>
+{%endblock%}
+
+
+
+{%block script%}
+<script>
+function doubleclick() {
+  document.getElementById("demo").innerHTML = "You have double clicked";
+}
+</script>
+
+<style>
+  .mousenav {
+    display: block;
+    text-align: center;
+  }
+  .mousenav ul {
+    margin: 0;
+    padding:0;
+    list-style: none;
+  }
+  .mousenav a {
+    display:block;
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8em 1.8em;
+    text-transform: uppercase;
+    font-size: 80%;
+    letter-spacing: 2px;
+    text-shadow: 0 -1px 0 #000;
+    position: relative;
+  }
+  .mousenav{
+    vertical-align: top;
+    display: inline-block;
+    box-shadow:
+      1px -1px -1px 1px #000,
+      -1px 1px -1px 1px #fff,
+      0 0 6px 3px #fff;
+    border-radius:6px;
+  }
+  .mousenav li {
+    position: relative;
+  }
+  .mousenav > li {
+    float: left;
+    border-bottom: 4px #aaa solid;
+    margin-right: 1px;
+  }
+  .mousenav > li > a {
+    margin-bottom: 1px;
+    box-shadow: inset 0 2em .33em -0.5em #555;
+  }
+  .mousenav > li:hover,
+  .mousenav > li:hover > a {
+    border-bottom-color: orange;
+  }
+  .mousenav li:hover > a {
+    color:orange;
+  }
+  .mousenav > li:first-child {
+    border-radius: 4px 0 0 4px;
+  }
+  .mousenav > li:first-child > a {
+    border-radius: 4px 0 0 0;
+  }
+  .mousenav > li:last-child {
+    border-radius: 0 0 4px 0;
+    margin-right: 0;
+  }
+  .mousenav > li:last-child > a {
+    border-radius: 0 4px 0 0;
+  }
+  .mousenav li li a {
+    margin-top: 1px;
+  }
+
+  .mousenav li a:first-child:nth-last-child(2):before {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    border: 5px solid transparent;
+    top: 50% ;
+    right:5px;
+   }
+
+
+   /* submenu positioning*/
+  .mousenav ul {
+    position: absolute;
+    white-space: nowrap;
+    border-bottom: 5px solid  orange;
+    z-index: 1;
+    left: -99999em;
+  }
+  .mousenav > li:hover > ul {
+    left: auto;
+    margin-top: 5px;
+    min-width: 100%;
+  }
+  .mousenav > li li:hover > ul {
+    left: 100%;
+    margin-left: 1px;
+    top: -1px;
+  }
+  /* arrow hover styling */
+  .mousenav > li > a:first-child:nth-last-child(2):before {
+    border-top-color: #aaa;
+  }
+  .mousenav > li:hover > a:first-child:nth-last-child(2):before {
+    border: 5px solid transparent;
+    border-bottom-color: orange;
+    margin-top:-5px
+  }
+  .mousenav li li > a:first-child:nth-last-child(2):before {
+    border-left-color: #aaa;
+    margin-top: -5px
+  }
+  .mousenav li li:hover > a:first-child:nth-last-child(2):before {
+    border: 5px solid transparent;
+    border-right-color: orange;
+    right: 10px;
+  }
+
+</style>
+{%endblock%}

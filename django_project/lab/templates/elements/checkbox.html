@@ -1,0 +1,55 @@
+{% extends "lab/labhome.html" %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+
+
+
+<div class="col-md-6 mt-4">
+<div class="content-section">
+  <h4>Check Boxes</h4>
+  <hr>
+  <br>
+    <form >
+  <input type="checkbox" id="Selelnium" name="Selelnium" value="Selelnium">
+  <label for="vehicle1"> Selelnium</label><br>
+
+  <input type="checkbox" id="Django" name="Django" value="Django">
+  <label for="vehicle2"> Django</label><br>
+
+  <input type="checkbox" id="Flask" name="Flask" value="Flask">
+  <label for="vehicle3">Flask</label><br>
+
+  <input type="checkbox" id="BigData" name="BigData" value="BigData">
+  <label for="vehicle3">BigData</label><br>
+
+  <input type="checkbox" id="DataScience" name="DataScience" value="DataScience">
+  <label for="vehicle3">DataScience</label><br>
+
+</form>
+  <br>
+  </div>  </div>
+
+
+
+
+
+{%endblock%}
+
+
+
+{%block script%}
+
+  <style>
+    .float-container {
+      border: 2px solid #fff;
+      padding: 20px;
+  }
+
+  .float-child {
+      width: 50%;
+      float: left;
+      padding: 70px;
+      border: 1px solid black;
+  }
+  </style>
+{%endblock%}

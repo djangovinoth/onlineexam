@@ -1,0 +1,79 @@
+{% extends "lab/labhome.html" %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+<h5 style="text-align:center">Input Boxes</h5>
+<hr>
+
+<div class="row">
+
+
+<div class="col-md-6 mt-4">
+<div class="content-section">
+  <br><br>
+    <form>
+    	<label>Input "text" type:</label><br>
+    	<input type="text" name="firstname"><br>
+    </form>
+      <br><br>
+  </div>  </div>
+
+  <div class="col-md-6 mt-4">
+  <div class="content-section">
+      <br><br>
+    <form>
+      <label>Input "password" type:</label><br>
+      <input type="Password" name="password"><br>
+    </form>
+      <br><br>
+  </div>
+</div>
+<div class="col-md-6 mt-4">
+<div class="content-section">
+    <br><br>
+  <form>
+    <label> Input "email" type:</label><br>
+    <input type="email" name="email" required>
+        <input type="submit">
+
+  </form>
+    <br><br>
+</div>  </div>
+
+<div class="col-md-6 mt-4">
+<div class="content-section">
+    <br><br>
+  <form>
+    <label>Input "file" type:</label><br>
+    <input type="file" name="newfile">
+  </form>
+    <br><br>
+</div>
+
+
+</div>
+  </div>
+
+
+
+
+
+{%endblock%}
+
+
+
+{%block script%}
+
+  <style>
+    .float-container {
+      border: 2px solid #fff;
+      padding: 20px;
+  }
+
+  .float-child {
+      width: 50%;
+      float: left;
+      padding: 70px;
+      border: 1px solid black;
+  }
+  </style>
+{%endblock%}

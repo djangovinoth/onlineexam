@@ -1,0 +1,66 @@
+{% extends "lab/labhome.html" %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+
+
+
+<div class="col-md-6 mt-4">
+<div class="content-section">
+
+  <div id="content" class="large-12 columns">
+          <div class="example">
+    <h3>Geolocation</h3>
+    <hr>
+    <button class="btn btn-info"  onclick="getYourCurrentLocation()">Show My Current Location?</button>
+    <hr>
+    <p id="cuurentloc">Click the button to get your current latitude and longitude</p>
+
+    <script>
+    var x=document.getElementById("cuurentloc");
+    function getYourCurrentLocation()
+      {
+      if (navigator.geolocation)
+        {
+        navigator.geolocation.getCurrentPosition(viewYourPosition);
+        }
+      else{x.innerHTML="Geolocation is not supported by this browser.";}
+      }
+    function viewYourPosition(position)
+      {
+      x.innerHTML="<div class='content-section'>Latitude: <div id='latitude'>" + position.coords.latitude +
+      "</div><br>Longitude: <div id='longitude'>" + position.coords.longitude +
+      "</div><br><div id='map-link'><a href='http://maps.google.com/?q=" + position.coords.latitude +
+      "," + position.coords.longitude + "'>See it on Google</a></div></div>";
+      }
+    </script>
+  </div>
+
+        </div>
+
+
+  </div>  </div>
+
+
+
+
+
+{%endblock%}
+
+
+
+{%block script%}
+
+  <style>
+    .float-container {
+      border: 2px solid #fff;
+      padding: 20px;
+  }
+
+  .float-child {
+      width: 50%;
+      float: left;
+      padding: 70px;
+      border: 1px solid black;
+  }
+  </style>
+{%endblock%}

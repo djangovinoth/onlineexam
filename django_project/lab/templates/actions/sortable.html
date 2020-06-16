@@ -1,0 +1,263 @@
+{% extends "lab/labhome.html" %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+
+
+<div class="row">
+
+
+<div class="col-md-6">
+  <div class="content-section">
+    <p style="text-align:center"><small><b>Droppable Sort</b></small></p>
+    <hr>
+    <ul id="sortable">
+      <li class="ui-state-default">Item 1</li>
+      <li class="ui-state-default">Item 2</li>
+      <li class="ui-state-default">Item 3</li>
+      <li class="ui-state-default">Item 4</li>
+      <li class="ui-state-default">Item 5</li>
+      <li class="ui-state-default">Item 6</li>
+      <li class="ui-state-default">Item 7</li>
+    </ul>
+
+
+</div></div>
+<hr>
+<div class="col-md-6">
+  <div class="content-section">
+    <p style="text-align:center"><small><b>CSS Resize</b></small></p>
+
+        <hr>
+<p>Sortable List Connection </p>
+
+
+<ul id="sortable1" class="connectedSortable">
+  <li class="ui-state-default">Item 1</li>
+  <li class="ui-state-default">Item 2</li>
+  <li class="ui-state-default">Item 3</li>
+  <li class="ui-state-default">Item 4</li>
+  <li class="ui-state-default">Item 5</li>
+</ul>
+
+<ul id="sortable2" class="connectedSortable">
+  <li class="ui-state-highlight">Item 1</li>
+  <li class="ui-state-highlight">Item 2</li>
+  <li class="ui-state-highlight">Item 3</li>
+  <li class="ui-state-highlight">Item 4</li>
+  <li class="ui-state-highlight">Item 5</li>
+</ul>
+
+
+<br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<br>
+</div></div>
+
+
+
+
+<div class="col-md-6">
+  <div class="content-section">
+    <p style="text-align:center"><small><b>Sortable in Grid</b></small></p>
+
+        <hr>
+
+<ul id="sortable3">
+  <li class="ui-state-default">A</li>
+  <li class="ui-state-default">B</li>
+  <li class="ui-state-default">C</li>
+  <li class="ui-state-default">D</li>
+  <li class="ui-state-default">E</li>
+  <li class="ui-state-default">F</li>
+  <li class="ui-state-default">G</li>
+  <li class="ui-state-default">H</li>
+  <li class="ui-state-default">I</li>
+  <li class="ui-state-default">J</li>
+  <li class="ui-state-default">K</li>
+  <li class="ui-state-default">L</li>
+</ul>
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br>
+<br><br>
+<br>
+</div></div>
+
+
+<div class="col-md-6">
+  <div class="content-section">
+    <p style="text-align:center"><small><b>Portlets Sorting</b></small></p>
+
+        <hr>
+
+
+<div class="column">
+
+  <div class="portlet">
+    <div class="portlet-header">Feeds</div>
+    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+  </div>
+
+  <div class="portlet">
+    <div class="portlet-header">News</div>
+    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+  </div>
+
+</div>
+
+<div class="column">
+
+  <div class="portlet">
+    <div class="portlet-header">Shopping</div>
+    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+  </div>
+
+</div>
+
+<div class="column">
+
+  <div class="portlet">
+    <div class="portlet-header">Links</div>
+    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+  </div>
+
+  <div class="portlet">
+    <div class="portlet-header">Images</div>
+    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+  </div>
+
+</div>
+
+
+
+<br><br><br><br><br><br><br><br><br><br>
+<br><br>
+<br>
+</div></div>
+
+
+
+</div>
+{%endblock%}
+
+
+
+{%block script%}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<style>
+
+  body {
+      min-width: 520px;
+    }
+    .column {
+      width: 170px;
+      float: left;
+      padding-bottom: 100px;
+    }
+    .portlet {
+      margin: 0 1em 1em 0;
+      padding: 0.3em;
+    }
+    .portlet-header {
+      padding: 0.2em 0.3em;
+      margin-bottom: 0.5em;
+      position: relative;
+    }
+    .portlet-toggle {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      margin-top: -8px;
+    }
+    .portlet-content {
+      padding: 0.4em;
+    }
+    .portlet-placeholder {
+      border: 1px dotted black;
+      margin: 0 1em 1em 0;
+      height: 50px;
+    }
+
+
+
+  #sortable3 { list-style-type: none; margin: 0; padding: 0; width: 450px; }
+    #sortable3 li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 100px; height: 90px; font-size: 4em; text-align: center; }
+
+
+
+  #sortable1, #sortable2 {
+      border: 1px solid #eee;
+      width: 142px;
+      min-height: 20px;
+      list-style-type: none;
+      margin: 0;
+      padding: 5px 0 0 0;
+      float: left;
+      margin-right: 10px;
+    }
+    #sortable1 li, #sortable2 li {
+      margin: 0 5px 5px 5px;
+      padding: 5px;
+      font-size: 1.2em;
+      width: 120px;
+    }
+
+#sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+#sortable li { margin: 0 5px 5px 5px; padding: 5px; font-size: 1.2em; height: 1.9em; }
+html>body #sortable li { height: 2em; line-height: 1.2em; }
+.ui-state-highlight { height: 1.5em; line-height: 1.2em; }
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+$( function() {
+
+
+  $( ".column" ).sortable({
+        connectWith: ".column",
+        handle: ".portlet-header",
+        cancel: ".portlet-toggle",
+        placeholder: "portlet-placeholder ui-corner-all"
+      });
+
+      $( ".portlet" )
+        .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
+        .find( ".portlet-header" )
+          .addClass( "ui-widget-header ui-corner-all" )
+          .prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
+
+      $( ".portlet-toggle" ).on( "click", function() {
+        var icon = $( this );
+        icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
+        icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
+      });
+
+
+
+
+      //;;;;;
+  $( "#sortable3" ).sortable();
+      $( "#sortable3" ).disableSelection();
+
+
+  $( "#sortable1, #sortable2" ).sortable({
+      connectWith: ".connectedSortable"
+    }).disableSelection();
+
+
+
+  $( "#sortable" ).sortable({
+    placeholder: "ui-state-highlight"
+  });
+  $( "#sortable" ).disableSelection();
+} );
+</script>
+
+
+
+{%endblock%}

@@ -1,0 +1,364 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+
+    {% if title %}
+        <title>Lab - {{ title }}</title>
+    {% else %}
+        <title>Lab</title>
+    {% endif %}
+</head>
+<body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+        <div class="container">
+          <a class="navbar-brand mr-4" href="{% url 'labhome' %}">Selenium Practice Lab</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
+              <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
+            </div>
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+              {% if user.is_authenticated %}
+              {%if user.is_superuser%}
+              <a class="nav-item nav-link" href="{% url 'staticqusans' %}">Create Static Questions</a>
+                  {% else %}
+              <a class="nav-item nav-link" href="{% url 'staticqusans' %}">Latest Interiew Questions</a>
+                  {% endif %}
+
+                <a class="nav-item nav-link" href="{% url 'blog-home' %}">Online Exam</a>
+                <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+                <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                <a class="nav-item nav-link" href="#">{{request.user}}</a>
+
+              {% else %}
+                <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+    <main role="main" class="container col-md-12 ">
+      <div class="row">
+
+        {%if user.is_authenticated%}
+        {%if not user.is_superuser%}
+        <div class="container col-md-2">
+        <div class="content-section">
+
+          <p class='text-muted'>Pick your element to practice</p>
+
+          <ul id="menu" class="list-unstyled components">
+
+            <li class="list-group-item list-group-item-light">
+                <a href="#elementsMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Element Set1</a>
+                <ul class="collapse list-unstyled" id="elementsMenu">
+
+                  <li class="list-group-item list-group-item-light">
+
+                        <a href="/input">InputBox</a>
+                    </li>
+                    <li class="list-group-item list-group-item-light">
+
+                        <a href="/checkbox">CheckBox</a>
+                    </li>
+                    <li class="list-group-item list-group-item-light">
+
+                        <a href="/radiobutton">RadioButton</a>
+                    </li>
+
+                    <li class="list-group-item list-group-item-light">
+
+                        <a href="/autocomplete">Auto complete</a>
+                    </li>
+                    <li class="list-group-item list-group-item-light">
+
+                        <a href="/multiwindow">Window Handling</a>
+                    </li>
+                    <li class="list-group-item list-group-item-light">
+
+                        <a href="/alert">Alert</a>
+                    </li>
+                    <li class="list-group-item list-group-item-light">
+
+                        <a href="/FileUploadDownload">File Upload Or Download</a>
+                    </li>
+
+                    <li class="list-group-item list-group-item-light">
+
+                        <a href="/AddOrRemove">Add Or Remove</a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+
+            <li class="list-group-item list-group-item-light">
+                <a href="#elementset2Menu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Element Set2</a>
+                <ul class="collapse list-unstyled" id="elementset2Menu">
+
+                  <li class="list-group-item list-group-item-light">
+
+                        <a href="/dropdown">Drop Down</a>
+                    </li>
+                  <li class="list-group-item list-group-item-light">
+
+                        <a href="/keyname">Key Names</a>
+                    </li>
+
+                    <li class="list-group-item list-group-item-light">
+
+                        <a href="/endlessscroll">Endless Scroll</a>
+                    </li>
+                    <li class="list-group-item list-group-item-light">
+
+                        <a href="/currentlocation">currentlocation</a>
+                    </li>
+
+
+                    <li class="list-group-item list-group-item-light">
+
+                        <a href="/browserintent">Brower intent</a>
+                    </li>
+
+                    <li class="list-group-item list-group-item-light">
+
+                        <a href="{%url 'bootstrapalert' msg='no'%}">Bootstrap Alert</a>
+                    </li>
+                    <li class="list-group-item list-group-item-light">
+
+                        <a href="/datepicker">Date Picker</a>
+                    </li>
+
+                    <li class="list-group-item list-group-item-light">
+
+                        <a href="/progressbar">Progress Bar</a>
+                    </li>
+
+                    <li class="list-group-item list-group-item-light">
+
+                        <a href="/tabs">Tabs</a>
+                    </li>
+
+
+                </ul>
+            </li>
+
+
+                <li class="list-group-item list-group-item-light">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Actions</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+
+                      <li class="list-group-item list-group-item-light">
+
+                            <a href="{%url 'resize'%}">Resize</a>
+                        </li>
+                        <li class="list-group-item list-group-item-light">
+
+                            <a href="{%url 'slider'%}">Slider</a>
+                        </li>
+                        <li class="list-group-item list-group-item-light">
+
+                            <a href="/rightclick">Right Click</a>
+                        </li>
+                        <li class="list-group-item list-group-item-light">
+
+                            <a href="/doubleclick">Double Click</a>
+                        </li>
+                        <li class="list-group-item list-group-item-light">
+
+                            <a href="/draganddrop">Drag And Drop</a>
+                        </li>
+                        <li class="list-group-item list-group-item-light">
+
+                            <a href="/selectable">Selectable</a>
+                        </li>
+                        <li class="list-group-item list-group-item-light">
+
+                            <a href="/mousehover">Mousehover</a>
+                        </li>
+                        <li class="list-group-item list-group-item-light">
+
+                            <a href="/tooltip">tooltip</a>
+                        </li>
+                        <li class="list-group-item list-group-item-light">
+
+                            <a href="/sortable">Sortable</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+                <li class="list-group-item list-group-item-light">
+                    <a href="#javascriptMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">javascript</a>
+                    <ul class="collapse list-unstyled" id="javascriptMenu">
+
+                      <li class="list-group-item list-group-item-light">
+
+                            <a href="/scroll">Scrolling</a>
+                        </li>
+                        <li class="list-group-item list-group-item-light">
+
+                            <a href="/jsclickandtype">ClickAndType</a>
+                        </li>
+                        <li class="list-group-item list-group-item-light">
+
+                            <a href="/dom">Dom</a>
+                        </li>
+                        <li class="list-group-item list-group-item-light">
+
+                            <a href="/highlight">Hightlight</a>
+                        </li>
+                        <li class="list-group-item list-group-item-light">
+
+                            <a href="/enabledOrDisabled">EnabledOrDisabled</a>
+                        </li>
+
+
+                    </ul>
+                </li>
+
+
+                <li class="list-group-item list-group-item-light">
+                    <a href="#imageMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Image Based</a>
+                    <ul class="collapse list-unstyled" id="imageMenu">
+
+                      <li class="list-group-item list-group-item-light">
+
+                            <a href="/SingleAndMultiImage">CropImage</a>
+                        </li>
+
+
+                        <li class="list-group-item list-group-item-light">
+
+                              <a href="/brokenimage">brokenimage</a>
+                          </li>
+
+                    </ul>
+                </li>
+
+
+
+
+
+                <!-- <li class="list-group-item list-group-item-light">
+                    <a href="#frames" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Frames</a>
+                    <ul class="collapse list-unstyled" id="frames">
+
+                      <li class="list-group-item list-group-item-light">
+
+                          <a href="/frameset">Nested frame</a>
+                      </li>
+
+
+                      <li class="list-group-item list-group-item-light">
+
+                          <a href="/frameset">iframe</a>
+                      </li>
+
+                    </ul>
+                </li> -->
+
+
+
+                <li class="list-group-item list-group-item-light">
+                    <a href="#tables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Tables</a>
+                    <ul class="collapse list-unstyled" id="tables">
+
+                      <li class="list-group-item list-group-item-light">
+
+                          <a href="/statictable">Static Table</a>
+                      </li>
+                      <li class="list-group-item list-group-item-light">
+
+                          <a href="/dynamictable1">Dynamic Table 1</a>
+                      </li>
+                      <li class="list-group-item list-group-item-light">
+
+                          <a href="/dynamictable2">Dynamic Table 2</a>
+                      </li>
+
+                      <li class="list-group-item list-group-item-light">
+
+                          <a href="/dynamictable3">Dynamic Table 3</a>
+                      </li>
+
+                    </ul>
+                </li>
+
+
+
+
+
+
+
+
+
+
+            </ul>
+        </div>
+      </div>
+      {%else%}
+
+
+      <div class="col-md-2">
+      <div class="content-section">
+        <h3><em>Technologies</em></h3>
+        <p class='text-muted'><em><small>Select your element to practice</small></em>
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-light"><a href="{%url 'student_show_levels' 'JAVA'%}"><em><small>Java</small></em></a></li>
+            <li class="list-group-item list-group-item-light"><a href="{%url 'student_show_levels' 'PYTHON'%}"><em><small>Python</small></em></a></li>
+            <li class="list-group-item list-group-item-light"><a href="{%url 'student_show_levels' 'MANUALTESTING'%}"><em><small>Manual Testing</small></em></a></li>
+            <li class="list-group-item list-group-item-light"><a href="{%url 'student_show_levels' 'SELENIUM'%}"><em><small>Selenium</small></em></a></li>
+          </ul>
+        </p>
+      </div>
+    </div>
+    {%endif%}
+    {%endif%}
+
+        <div class="col-md-10">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+          {% block progress %}{% endblock %}
+          {% block content %}{% endblock %}
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    {%block script%}{%endblock%}
+</body>
+</html>

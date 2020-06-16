@@ -1,0 +1,250 @@
+{% extends "lab/labhome.html" %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+<h5 style="text-align:center">Dropdown Elements</h5>
+<hr>
+
+
+<div class="row">
+
+
+<div class="col-md-6 mt-4"  style="text-align:center">
+<div class="content-section"  >
+
+  <p>Simple dropdown</p>
+  <hr>
+<br><br>
+
+<div class="row">
+
+  <div class="col-md-6 mt-4">
+
+
+    <select class="form-control "  name="month" id="month">
+
+      <option value="01">Ariyalur</option>
+      <option value="02">Chengalpattu</option>
+      <option value="03">Chennai</option>
+      <option value="04">Coimbatore</option>
+      <option value="05">Cuddalore</option>
+      <option value="06">Dharmapuri</option>
+      <option value="07">Dindigul</option>
+      <option value="08">Erode</option>
+      <option value="09">Kallakurichi</option>
+      <option value="10">Kanchipuram</option>
+      <option value="11">Nagercoil</option>
+      <option value="12">Karur</option>
+
+
+      <option value="13">Krishnagiri</option>
+      <option value="14">Madurai</option>
+      <option value="15">Mayiladuthurai</option>
+
+
+      <option value="16">Nagapattinam</option>
+      <option value="17">Namakkal</option>
+      <option value="18">Ooty</option>
+
+      <option value="19">Perambalur</option>
+      <option value="20">Pudukottai</option>
+      <option value="21">Ramanathapuram</option>
+
+      <option value="22">Ranipet</option>
+      <option value="23">Salem</option>
+      <option value="24">Sivagangai</option>
+
+
+
+
+      <option value="25">Tenkasi</option>
+      <option value="26">Thanjavur</option>
+      <option value="27">Theni</option>
+
+
+      <option value="28">Thoothukudi</option>
+      <option value="29">Tiruchirappalli</option>
+      <option value="30">Tirunelveli</option>
+
+
+      <option value="31">Tirupattur</option>
+      <option value="32">Tiruppur</option>
+      <option value="33">Tiruvallur</option>
+
+      <option value="34">Tiruvannamalai</option>
+      <option value="35">Thiruvarur</option>
+      <option value="36">Vellore</option>
+
+      <option value="37">Viluppuram</option>
+      <option value="38">Virudhunagar</option>
+
+    </select>
+
+
+
+  </div>
+
+  <div class="col-md-6 mt-4">
+
+
+    <select class="form-control "  name="month" id="month">
+
+      <option value="01">Jan</option>
+      <option value="02">Feb</option>
+      <option value="03">Mar</option>
+      <option value="04">Apr</option>
+      <option value="05">May</option>
+      <option value="06">June</option>
+      <option value="07">July</option>
+      <option value="08">Aug</option>
+      <option value="09">Sep</option>
+      <option value="10">Oct</option>
+      <option value="11">Nov</option>
+      <option value="12">Dec</option>
+
+    </select>
+
+
+
+  </div>
+
+ </div>
+    <br>
+    <br><br><br>
+  </div>
+  </div>
+
+
+  <div class="col-md-6 mt-4">
+  <div class="content-section" style="text-align:center">
+
+    <p>Dropdown with CheckBox</p>
+    <hr>
+  <br><br>
+  <select id="lstFruits"  class="form-control "  multiple="multiple">
+    <option value="1">Mango</option>
+    <option value="2">Apple</option>
+    <option value="3">Banana</option>
+    <option value="4">Guava</option>
+    <option value="5">Orange</option>
+  </select>
+
+
+  <br><br><br><br>
+    </div>
+    </div>
+
+
+<div class="col-md-6 mt-4">
+<div class="content-section" style="text-align:center">
+
+  <p>Multi Select Dropdown</p>
+  <hr>
+<br><br>
+<div style="text-align:center">
+
+
+  <div class="row">
+
+    <div class="col-md-6 mt-4">
+  <select class="form-control" name="days" id="days" multiple>
+  <option value="Sunday">Sunday</option>
+  <option value="Monday">Monday</option>
+  <option value="Tuesday">Tuesday</option>
+  <option value="Wednesday">Wednesday</option>
+  <option value="Thursday">Thursday</option>
+  <option value="Friday">Friday</option>
+  <option value="Saturday">Saturday</option>
+</select>
+  </div>
+
+  <div class="col-md-6 mt-4">
+<select class="form-control" name="days" id="days" multiple>
+<option value="One">One</option>
+<option value="Two">Two</option>
+<option value="Three">Three</option>
+<option value="Four">Four</option>
+<option value="Five">Five</option>
+
+</select>
+</div>
+
+</div>
+
+</div>
+<br><br><br><br>
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+{%endblock%}
+
+
+
+{%block script%}
+
+  <style>
+    .float-container {
+      border: 2px solid #fff;
+      padding: 20px;
+  }
+
+  .float-child {
+      width: 50%;
+      float: left;
+      padding: 70px;
+      border: 1px solid black;
+  }
+  </style>
+
+  <script type="text/javascript">
+function open_win() {
+    window.open("https://www.google.com/")
+    window.open("https://www.bing.com/")
+        window.open("http://www.vmetry.com/")
+}
+function onclickmyFunction() {
+  var myWindow = window.open("", "myWindow", "width=200,height=100");
+  myWindow.document.write("<p>This is 'myWindow'</p>");
+  myWindow.document.write("<input type=button onClick='self.close();' value='Close this window'>");
+
+
+}
+</script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<link href="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css"
+   rel="stylesheet" type="text/css" />
+<script src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js"
+   type="text/javascript"></script>
+<script type="text/javascript">
+   $(function () {
+       $('#lstFruits').multiselect({
+           includeSelectAllOption: true
+       });
+   });
+</script>
+
+
+{%endblock%}

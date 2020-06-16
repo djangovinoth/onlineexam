@@ -1,0 +1,137 @@
+{% extends "lab/labhome.html" %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+<div class="col-md-8 mt-4" style="text-align:center">
+      <p >Dynamic Table 3 - Sort By column</p>
+<div class="content-section">
+<br>
+<table class="table">
+  <thead class="bg-info">
+
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col" id="firstName">Name <i class="fa fa-sort" aria-hidden="true"></i></th>
+      <th scope="col" id="age">Mobile <i class="fa fa-sort" aria-hidden="true"></i></th>
+      <th scope="col" id="date">Joined Date <i class="fa fa-sort" aria-hidden="true"></i></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">1</td>
+      <td class="firstName">User1</td>
+        <td>111111</td>
+
+<td>07/01/2010</td>
+    </tr>
+    <tr>
+      <td scope="row">2</td>
+      <td class="firstName">User2</td>
+
+      <td>222222</td>
+
+        <td>08/01/2009</td>
+    </tr>
+    <tr>
+      <td scope="row">3</td>
+      <td class="firstName">User3</td>
+
+      <td>3333333</td>
+
+            <td>07/05/2009</td>
+    </tr>
+    <tr>
+      <td scope="row">4</td>
+      <td class="firstName">User4</td>
+
+      <td>444444</td>
+
+            <td>01/05/2000</td>
+    </tr>
+    <tr>
+      <td scope="row">5</td>
+      <td class="firstName">User5</td>
+
+      <td>555555</td>
+
+            <td>09/05/2020</td>
+    </tr>
+  </tbody>
+
+
+  </div>  </div>
+{%endblock%}
+
+
+
+{%block script%}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+
+  function sortTable(column, type) {
+
+  //Get and set order
+  //Use -data to store wheater it will be sorted ascending or descending
+  var order = $('.table thead tr>th:eq(' + column + ')').data('order');
+  order = order === 'ASC' ? 'DESC' : 'ASC';
+  $('.table thead tr>th:eq(' + column + ')').data('order', order);
+
+  //Sort the table
+  $('.table tbody tr').sort(function(a, b) {
+  //                                 ^  ^
+  //                                 |  |
+  //        The 2 parameters needed to be compared.
+  //        Since you are sorting rows, a and b are <tr>
+
+    //Find the <td> using the column number and get the text value.
+    //Now, the a and b are the text of the <td>
+    a = $(a).find('td:eq(' + column + ')').text();
+    b = $(b).find('td:eq(' + column + ')').text();
+
+    switch (type) {
+      case 'text':
+        //Proper way to compare text in js is using localeCompare
+        //If order is ascending you can - a.localeCompare(b)
+        //If order is descending you can - b.localeCompare(a);
+        return order === 'ASC' ? a.localeCompare(b) : b.localeCompare(a);
+        break;
+      case 'number':
+        //You can use deduct to compare if number.
+        //If order is ascending you can -> a - b.
+        //Which means if a is bigger. It will return a positive number. b will be positioned first
+        //If b is bigger, it will return a negative number. a will be positioned first
+        return order === 'ASC' ? a - b : b - a;
+        break;
+      case 'date':
+        var dateFormat = function(dt) {
+          [m, d, y] = dt.split('/');
+          return [y, m - 1, d];
+        }
+
+        //convert the date string to an object using `new Date`
+        a = new Date(...dateFormat(a));
+        b = new Date(...dateFormat(b));
+
+        //You can use getTime() to convert the date object into numbers.
+        //getTime() method returns the number of milliseconds between midnight of January 1, 1970
+        //So since a and b are numbers now, you can use the same process if the type is number. Just deduct the values.
+        return order === 'ASC' ? a.getTime() - b.getTime() : b.getTime() - a.getTime();
+        break;
+    }
+
+  }).appendTo('.table tbody');
+}
+
+$('#firstName').click(function() {
+  sortTable(1, 'text');
+});
+$('#age').click(function() {
+  sortTable(2, 'number');
+});
+$('#date').click(function() {
+  sortTable(3, 'date');
+});
+
+</script>
+{%endblock%}

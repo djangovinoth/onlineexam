@@ -1,0 +1,65 @@
+{% extends "lab/labhome.html" %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+
+<div class="row">
+
+  <div class="col-md-6">
+      <div class="content-section">
+          <div style="text-align:center">
+    <form>
+      <p><small>Enter the value using JavaScriptExecutor</small></p>
+      <hr>
+      <br>
+
+
+
+      <label><small>Input "text" type:</small></label><br>
+      <input type="text" name="firstname"><br>
+    </form>
+      <br>
+  </div>  </div></div>
+
+
+
+
+    <div class="col-md-6">
+        <div class="content-section">
+          <div style="text-align:center">
+    <p>Click the below link using JavaScriptExecutor</p>
+
+    <hr>
+    <br>
+
+
+
+
+    <form>
+      <a href="https://www.google.com/">Google</a>
+    </form>
+    <br>
+      <br>
+  </div>
+</div>
+</div>  </div>
+
+
+
+{%endblock%}
+
+{%block script%}
+
+  <style>
+    .float-container {
+      /* border: 3px solid #fff; */
+      padding: 20px;
+  }
+
+  .float-child {
+      width: 50%;
+      float: left;
+      padding: 20px;
+       border: 1px solid blue;
+  }
+  </style>
+{%endblock%}

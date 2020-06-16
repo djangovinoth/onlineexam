@@ -1,0 +1,58 @@
+{% extends "lab/labhome.html" %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+
+
+
+<div class="col-md-6">
+
+  <div class="content-section">
+    <div class="col-md-12">
+    <br><br>
+  <div class="card">
+    <h5 class="card-header">Right Click on box</h5>
+    <div class="card-body">
+        <div class="p-3 mb-2 bg-info text-white">
+
+
+      <div id="textid" oncontextmenu="myFunction()" contextmenu="mymenu">
+      <p class="card-text">Right-click inside this box to see the context menu!</p>
+  </div>
+    </div>    </div>
+  </div>
+
+<br><br>
+</div></div></div>
+
+
+<br>
+<br>
+
+<hr>
+
+<br>
+<br>
+<div class="col-md-6">
+
+  <div class="content-section">
+    <div class="col-md-12">
+    <p>Right Click on Link</p>
+    <hr>
+    <a href="https://www.google.com/">Google</a>
+  </div>  </div> </div>
+
+
+
+
+
+{%endblock%}
+
+{%block script%}
+
+
+  <script>
+function myFunction() {
+  alert("You right-clicked inside the div!");
+}
+</script>
+{%endblock%}

@@ -1,0 +1,136 @@
+{% extends "staticqusans/staticqus.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+
+
+    <li class="col-md-8 list-group-item list-group-item-light border-secondary"  style="text-align:center">Latest {{technology}} Interview questions</li>
+
+
+
+
+
+
+
+
+
+<div class="mt-4">
+
+
+
+{% if per.has_other_pages %}
+  <ul class="pagination">
+    {% if per.has_previous %}
+      <li><a class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" href="?page={{ per.previous_page_number }}">Previous</a></li>
+    {% else %}
+      <li class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1 disabled"><span>First</span></li>
+    {% endif %}
+    {% for i in per.paginator.page_range %}
+      {% if per.number == i %}
+        <li class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1 active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if per.has_next %}
+      <li><a class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" href="?page={{ per.next_page_number }}">Next</a></li>
+    {% else %}
+      <li class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1 disabled"><span>Last</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+</div>
+
+
+
+
+
+      <div class="row">
+
+
+
+<div class="col-md-8">
+
+{% for j in per%}
+
+  <div class="content-section bg-light border border-secondary" >
+
+
+    <div class="row">
+      <div class="col-md-2.5" >
+
+      <p style="color:#f7546c"><em> <u>Question {{ forloop.counter }} : </u></em></p>
+
+    </div>
+
+    <div class="col-md-12">
+
+    <h6 style="color:#f7546c"><em> {{j.question|safe }} </em></h6>
+
+  </div>  </div>
+
+
+<hr >
+
+<div class="row">
+  <div class="col-md-2.5">
+
+  <p class='text-muted' ><em> Answer   : </em></p>
+
+</div>
+
+<div class="col-md-12">
+
+<p class='text-muted'> {{j.answer|safe}} </p>
+
+</div>  </div>
+
+
+
+  </div>
+
+{%endfor%}
+  </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% if per.has_other_pages %}
+  <ul class="pagination">
+    {% if per.has_previous %}
+      <li><a class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" href="?page={{ per.previous_page_number }}">Previous</a></li>
+    {% else %}
+      <li class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1 disabled"><span>First</span></li>
+    {% endif %}
+    {% for i in per.paginator.page_range %}
+      {% if per.number == i %}
+        <li class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1 active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if per.has_next %}
+      <li><a class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1" href="?page={{ per.next_page_number }}">Next</a></li>
+    {% else %}
+      <li class="btn btn-outline-info mb-4 btn-sm mt-1 mb-1 disabled"><span>Last</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+{%endblock%}

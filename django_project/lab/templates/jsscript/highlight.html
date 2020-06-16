@@ -1,0 +1,70 @@
+{% extends "lab/labhome.html" %}
+{% load static %}
+{%block title %}Drag and Drop{%endblock%}
+
+{%block content%}
+
+<div class="row">
+
+
+<div class="col-md-4">
+<div class="content-section">
+
+  <div style="text-align:center">
+    <br>
+    <br>
+
+    <h4>Hightlight Image</h4>
+    <br>
+    <hr>
+    <br>
+
+
+    <img src="{% static 'images/vcentry.jpg' %}" alt="Trulli" width="230" height="200">
+    <br>
+    <br>
+<hr>
+  <h5>Vcentry</h5>
+
+  <br>
+  <br>
+
+    </div>
+  </div>  </div>
+
+  <div class="col-md-4">
+  <div class="content-section">
+
+<br><br><br>
+<div style="text-align:center">
+    <form>
+      <label> Input "email" type:</label><br>
+      <input type="email" name="email" required>
+          <input type="submit">
+
+    </form>
+    <br><br><br>
+  </div>  </div>
+
+</div></div>
+
+
+
+{%endblock%}
+
+{%block script%}
+
+  <style>
+    .float-container {
+      /* border: 3px solid #fff; */
+      padding: 20px;
+  }
+
+  .float-child {
+      width: 50%;
+      float: left;
+      padding: 20px;
+      /* border: 2px solid red; */
+  }
+  </style>
+{%endblock%}

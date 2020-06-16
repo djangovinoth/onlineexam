@@ -1,0 +1,21 @@
+{% extends "lab/labhome.html" %}
+{% load static %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+
+
+<p>Bootstrap Alert </p>
+
+<li class="list-group-item list-group-item-light">
+  <a id='info' href="{%url 'bootstrapalert' msg='info'%}">bootstrap info alert </a>
+</li>
+  <li class="list-group-item list-group-item-light">
+<a id='alert' href="{%url 'bootstrapalert' msg='success'%}"> bootstrap success alert</a>
+</li>
+
+<li class="list-group-item list-group-item-light">
+<a id='warning' href="{%url 'bootstrapalert' msg='warning'%}">bootstrap warning alert</a>
+
+</li>
+
+{%endblock%}

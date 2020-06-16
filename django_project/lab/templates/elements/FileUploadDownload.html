@@ -1,0 +1,55 @@
+{% extends "lab/labhome.html" %}
+{% load static %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+
+
+
+
+<div class="col-md-6">
+<div class="content-section">
+  <h5>Upload file </h5>
+  <hr>
+  <br>
+  <br>
+      <form>
+        <label>Input "file" type:</label><br>
+        <input class="btn btn-info" type="file" name="newfile">
+      </form>
+      <br>
+      <br>
+    </div>  </div>
+
+
+<div class="col-md-6">
+<div class="content-section">
+
+    <h5>Download file </h5>
+    <hr>
+    <br>
+    <a href="{%static 'images/angular.jpeg'%}" download>Click Here</a>
+    <br>
+    <br>
+  </div>  </div>
+
+
+
+
+{%endblock%}
+
+{%block script%}
+
+  <style>
+    .float-container {
+      /* border: 3px solid #fff; */
+      padding: 20px;
+  }
+
+  .float-child {
+      width: 100%;
+      float: left;
+      padding: 20px;
+      border: 1px solid red;
+  }
+  </style>
+{%endblock%}

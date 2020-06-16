@@ -39,8 +39,90 @@
 
               <td><small>{{a.ratio}}</small></td>
               <td><small>{{a.status}} - {{a.score}}%</small></td>
-              <td></td>
-                <td><small>{{a.totalscore}}%</small></td>
+              <td><a data-toggle="modal"  href="#" data-toggle="modal" data-target="#myModal{{a.attemptid}}" ><i class="fa fa-eye" style="font-size:25px;color:green"></i></a></td>
+                <td><small>{{a.totalscore}}%</small>
+
+
+                  <div class="modal" id="myModal{{a.attemptid}}" >
+                      <div class="modal-dialog modal-lg" >
+                        <div class="modal-content p-3 mb-2 bg-info text-white">
+
+                          <!-- Modal Header -->
+                          <div class="modal-header">
+                            <h4 class="modal-title">ATTEMPT ID - {{a.attemptid}}</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          </div>
+
+                          <!-- Modal body -->
+                          <div class="modal-body">
+                            {%for q in quesans%}
+                              {%if a.attemptid is q.loopid%}
+
+                            <div class="p-3 mb-2 bg-light text-dark">
+                                <div class="p-3 mb-2 bg-primary text-white">
+                                  <small>{{q.dicques|safe}}</small>
+                                </div>
+
+                                    <div class="p-3 mb-2 bg-info text-white">
+                                <small>Answer A :</small>
+                                <small>{{q.answera|safe}}</small>
+                                  </div>
+                                <div class="p-3 mb-2 bg-info text-white">
+                                <small>Answer B :</small>
+                                <small>{{q.answerb|safe}}</small>
+
+                                </div>
+                                <div class="p-3 mb-2 bg-info text-white">
+                                <small>Answer C :</small>
+                                <small>{{q.answerc|safe}}</small>
+
+
+                                </div>
+                                  <div class="p-3 mb-2 bg-info text-white">
+                                <small>Answer D :</small>
+                                <small>{{q.answerd|safe}}</small>
+
+
+                                </div>
+
+                                {%if q.dicans == 'NO'%}
+                    <div class="p-3 mb-2 bg-danger text-dark">
+
+                                <small>Your not selected any answer, you skipped this question</small>
+
+
+                                </div>
+                                {%else%}
+                                <div class="p-3 mb-2 bg-warning text-dark">
+
+                                            <small>Your have choosen is - {{q.dicans}}</small>
+
+
+                                  </div>
+                              {%endif%}
+
+                            </div>
+                            {%endif%}
+                              {%endfor%}
+
+
+
+                          </div>
+
+                          <!-- Modal footer -->
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-danger btn-sm mt-1 mb-1" data-dismiss="modal">Close</button>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+
+                </td>
             </tr>
             {%endfor%}
             <tbody>

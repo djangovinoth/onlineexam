@@ -1,0 +1,47 @@
+{% extends "lab/labhome.html" %}
+{%block title %}Add or Remove{%endblock%}
+{%block content%}
+
+
+
+<div class="col-md-6">
+<div class="content-section">
+  <button class="btn btn-info" onclick="addWebElement()">Add New Webelement</button>
+  <hr>
+  <div id="webelements">
+
+
+
+
+</div>
+          <br><br>
+  </div>  </div>
+
+
+
+
+
+
+
+
+
+
+
+{%endblock%}
+
+{%block script%}
+
+
+  <script type="text/javascript">
+
+function addWebElement() {
+$("<button style='margin-right:16px' class='added-manually btn btn-info mt-2' onclick='deleteWebElement()'>Delete</button>").appendTo('#webelements');
+}
+function deleteWebElement() {
+$('#webelements button:first-child').remove();
+}
+      </script>
+
+
+
+{%endblock%}

@@ -1,0 +1,54 @@
+{% extends "lab/labhome.html" %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+
+
+  <div class="col-md-6">
+  <div class="content-section">
+    <br><br><br>
+    <div style="text-align:center">
+
+
+<p>Click the input box and see the difference between two inputs</p>
+<hr>
+<form action="/action_page.php">
+  <label for="ena">enabled field: </label><input id="ena" type="text" name="fname"><br><br>
+
+  <label for="dis">disabled field:</label> <input id="dis" type="text" name="lname" disabled><br>
+
+</form>
+    </div>
+<br><br><br>
+
+</div>
+</div>
+
+
+  <div class="col-md-6">
+  <div class="content-section">
+    <br><br><br>
+    <div style="text-align:center">
+
+
+<p>Click inside the text fields to see a yellow/green background:</p>
+<hr>
+<form>
+<label for="">First name  : </label><input type="text" id="firstname"><br><br>
+<label for="">Last name   :</label> <input type="text" id="lastname">
+</form>
+    </div>
+<br><br><br>
+</div>
+</div>
+{%endblock%}
+{%block script%}
+
+<style>
+#firstname:focus {
+  background-color: yellow;
+}
+#lastname:focus {
+  background-color: green;
+}
+</style>
+{%endblock%}

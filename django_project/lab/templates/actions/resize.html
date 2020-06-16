@@ -1,0 +1,106 @@
+{% extends "lab/labhome.html" %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+
+
+<div class="row">
+
+
+<div class="col-md-6">
+  <div class="content-section">
+    <p style="text-align:center"><small><b>jQuery Resize</b></small></p>
+    <hr>
+<div id="resizable" class="ui-widget-content">
+  <p class="ui-widget-header">Resizable</p>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div></div>
+<hr>
+<div class="col-md-6">
+  <div class="content-section">
+    <p style="text-align:center"><small><b>CSS Resize</b></small></p>
+
+        <hr>
+<p>The resize Property</p>
+
+
+<div id="divid">
+
+  <small>Let the user resize both the height and the width of this div element.</small>
+  <small>To resize: Click and drag the bottom right corner of this div element.</small>
+</div>
+
+<p><b>Note:</b> <small>Internet Explorer and Edge does not support the resize property.</small></p>
+<br>
+<br><br>
+<br>
+</div></div>
+
+
+
+
+<div class="col-md-6">
+  <div class="content-section">
+    <p style="text-align:center"><small><b>Text Area based Resize</b></small></p>
+
+        <hr>
+<p>The resize Property</p>
+
+<textarea id="resizable1" rows="5" cols="20"></textarea>
+
+
+
+<br>
+<br><br>
+<br>
+</div></div>
+
+
+
+
+</div>
+{%endblock%}
+
+
+
+{%block script%}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+    .ui-resizable-se {
+    bottom: 17px;
+  }
+
+  #resizable { width: 150px; height: 150px; padding: 0.5em; }
+  #resizable h3 { text-align: center; margin: 0; }
+
+
+  #divid {
+    border: 2px solid;
+    padding: 20px;
+    width: 300px;
+    resize: both;
+    overflow: auto;
+  }
+
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#resizable" ).resizable();
+  } );
+
+  $( "#resizable1" ).resizable({
+     handles: "se"
+   });
+
+  </script>
+
+
+
+{%endblock%}

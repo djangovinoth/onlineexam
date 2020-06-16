@@ -1,0 +1,119 @@
+{% extends "lab/labhome.html" %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+
+<div class="col-md-12 mt-4" style="text-align:center">
+      <p >Dynamic Table 1</p>
+<div class="content-section">
+
+
+  <div class="row">
+
+<div class="col-md-2">
+
+    Number of Rows:
+        </div>
+        <div class="col-md-2">
+
+            <input class="form-control"  type="text"  id="rows">
+                </div>
+        <div class="col-md-2">
+    Number of Column:
+        </div>
+        <div class="col-md-2">
+  <input  class="form-control"  type="text" id="cols">
+        </div>
+    <div class="col-md-2">
+
+    <button class="btn btn-info">Create Table</button>
+            </div>
+
+
+
+
+
+  </div>
+
+ </div>
+
+ <div class="content-section">
+ <div id="tableDiv" class="col-md-12">
+
+     Table will gentare here.
+
+     <br>
+     <br>
+ </div>          </div>
+
+
+
+
+</div>
+
+
+
+
+
+{%endblock%}
+
+
+
+{%block script%}
+
+
+
+  <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script >
+        $(document).ready(function(){
+            $("button").click(function(){
+              var number_of_rows = $('#rows').val();
+              var number_of_cols = $('#cols').val();
+              var table_body = '<table  class="table" name="newtable"><tbody>';
+                var k=1;
+              for(var i=0;i<number_of_rows;i++){
+                table_body+='<tr class="bg-info">';
+                for(var j=0;j<number_of_cols;j++){
+
+                    table_body +='<td scope="col">';
+                    table_body +='data ' +k;
+                    table_body +='</td>';
+                    k++;
+                }
+                table_body+='</tr>';
+              }
+                table_body+='</tbody></table>';
+               $('#tableDiv').html(table_body);
+            });
+        });
+    </script>
+    <style>
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+th,td {
+  border: 1px solid black;
+}
+
+table.a {
+  table-layout: auto;
+  width: 180px;
+}
+
+table.b {
+  table-layout: fixed;
+  width: 180px;
+}
+
+table.c {
+  table-layout: auto;
+  width: 100%;
+}
+
+table.d {
+  table-layout: fixed;
+  width: 100%;
+}
+</style>
+{%endblock%}

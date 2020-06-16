@@ -1,0 +1,84 @@
+{% extends "lab/labhome.html" %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+
+<div class="col-md-6 mt-4">
+<div class="content-section">
+    <p style="text-align:center">Radio button with label</p>
+    <hr>
+    <br>
+    <br>
+    <form>
+  <label>Please select your technology:</label>
+  <br>
+  <input type="radio" id="Django" name="technology1" value="Django">
+  <label for="male">Django</label><br>
+  <input type="radio" id="Selenium" name="technology1" value="Selenium">
+  <label for="female">Selenium</label><br>
+  <input type="radio" id="Flask" name="technology1" value="Flask">
+  <label for="other">Flask</label>
+
+
+
+
+</form>
+<br>
+<br>
+</div>
+
+
+</div>
+
+<br>
+<br>
+
+
+<div class="col-md-6 mt-4">
+<div class="content-section">
+
+<p style="text-align:center">Radio button without label</p>
+<hr>
+<br>
+<br>
+<form name="myform" >
+    <label>Please select your technology:</label>
+<br>
+<input type="radio" name="technology2" value="Django"> Django<br>
+<input type="radio" name="technology2" value="Selenium" checked> Selenium<br>
+<input type="radio" name="technology2" value="Flask"> Flask
+
+
+</form>
+
+
+<br>
+<br>
+
+  </div>  </div>
+
+
+
+
+
+
+
+{%endblock%}
+
+
+
+{%block script%}
+
+  <style>
+    .float-container {
+      border: 2px solid #fff;
+      padding: 20px;
+  }
+
+  .float-child {
+      width: 50%;
+      float: left;
+      padding: 70px;
+      border: 1px solid black;
+  }
+  </style>
+{%endblock%}

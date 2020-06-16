@@ -1,0 +1,163 @@
+{% extends "lab/labhome.html" %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+<h5 style="text-align:center">Window Handling</h5>
+<hr>
+
+
+<div class="row">
+
+
+<div class="col-md-6 mt-4">
+<div class="content-section" style="text-align:center"  >
+
+  <p>Single click with multi window openings</p>
+  <hr>
+<br><br>
+    <form style="text-align:center">
+    <input type=button class="btn btn-info" value="Open Windows" onclick="open_win()">
+    </form>
+    <br>
+    <br><br><br>
+  </div>
+  </div>
+
+
+
+
+<div class="col-md-6 mt-4">
+<div class="content-section" style="text-align:center">
+
+  <p>Popup windows</p>
+  <hr>
+<br><br>
+<div style="text-align:center">
+
+
+    <button class="btn btn-info" onclick="onclickmyFunction()">Try it</button>
+  </div>
+<br><br><br><br>
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <div class="col-md-6 mt-4">
+  <div class="content-section" style="text-align:center">
+
+    <p>Modal windows</p>
+    <hr>
+  <br><br>
+
+  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal</button>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Mobile:</label>
+              <input type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" >Email:</label>
+              <input type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Password:</label>
+              <input type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Confirm Password:</label>
+              <input type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Send message</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <br><br><br><br>
+    </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+{%endblock%}
+
+
+
+{%block script%}
+
+  <style>
+    .float-container {
+      border: 2px solid #fff;
+      padding: 20px;
+  }
+
+  .float-child {
+      width: 50%;
+      float: left;
+      padding: 70px;
+      border: 1px solid black;
+  }
+  </style>
+
+  <script type="text/javascript">
+function open_win() {
+    window.open("https://www.google.com/")
+    window.open("https://www.bing.com/")
+        window.open("http://www.vmetry.com/")
+}
+function onclickmyFunction() {
+  var myWindow = window.open("", "myWindow", "width=200,height=100");
+  myWindow.document.write("<p>This is 'myWindow'</p>");
+  myWindow.document.write("<input type=button onClick='self.close();' value='Close this window'>");
+
+
+}
+</script>
+
+
+{%endblock%}

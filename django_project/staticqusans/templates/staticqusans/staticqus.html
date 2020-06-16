@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+
+    {% if title %}
+        <title>Interview Questions Blog - {{ title }}</title>
+    {% else %}
+        <title>Interview Questions Blog</title>
+    {% endif %}
+</head>
+<body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Interview Questions</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
+              <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
+            </div>
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+              {% if user.is_authenticated %}
+                {%if user.is_superuser%}
+                <a class="nav-item nav-link" href="{% url 'staticqusans' %}">Create Static Questions</a>
+                    {% else %}
+                <a class="nav-item nav-link" href="{% url 'staticqusans' %}">Latest Interiew Questions</a>
+                    {% endif %}
+                <a class="nav-item nav-link" href="{% url 'labhome' %}">Lab Practice</a>
+                <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+                <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                <a class="nav-item nav-link" href="#">{{request.user}}</a>
+
+              {% else %}
+                <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+    <main role="main" class="container col-md-12 "  >
+      <div class="row">
+        {%if user.is_authenticated%}
+        {%if user.is_superuser%}
+        <div class="col-md-2 ">
+        <div class="content-section">
+          <h3>Technologies</h3>
+          <p class='text-muted'>Choose your technology to Create/Update static Questions
+            <ul class="list-group">
+              <li class="list-group-item list-group-item-light"><a href="{%url 'addques'%}">Add Questions</a></li>
+              <li class="list-group-item list-group-item-light"><a href="{%url 'showques' 'JAVA'%}">Java</a></li>
+              <li class="list-group-item list-group-item-light"><a href="{%url 'showques' 'PYTHON'%}">Python</a></li>
+              <li class="list-group-item list-group-item-light"><a href="{%url 'showques' 'MANUALTESTING'%}">Manual Testing</a></li>
+              <li class="list-group-item list-group-item-light"><a href="{%url 'showques' 'SELENIUM'%}">Selenium</a></li>
+            </ul>
+          </p>
+        </div>
+      </div>
+      {%else%}
+
+
+      <div class="col-md-2">
+      <div class="content-section border-secondary">
+        <p><em><b>Technologies </b> </em></p>
+        <p class='text-muted'><em><small>Choose your technology to view the latest questions.</small></em>
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-light border-secondary"><a href="{%url 'showques_std' 'JAVA'%}"><em><small>Java</small></em></a></li>
+            <li class="list-group-item list-group-item-light border-secondary"><a href="{%url 'showques_std' 'PYTHON'%}"><em><small>Python</small></em></a></li>
+            <li class="list-group-item list-group-item-light border-secondary"><a href="{%url 'showques_std' 'MANUALTESTING'%}"><em><small>Manual Testing</small></em></a></li>
+            <li class="list-group-item list-group-item-light border-secondary"><a href="{%url 'showques_std' 'SELENIUM'%}"><em><small>Selenium</small></em></a></li>
+          </ul>
+        </p>
+      </div>
+    </div>
+    {%endif%}
+    {%endif%}
+
+        <div class="col-md-10">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+          {% block progress %}{% endblock %}
+          {% block content %}{% endblock %}
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

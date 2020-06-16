@@ -1,0 +1,92 @@
+{% extends "lab/labhome.html" %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+
+<div class="row">
+
+
+<div class="col-md-6">
+  <div class="content-section">
+    <p style="text-align:center">Tooltip Example 1</p>
+    <hr>
+<p><a href="#" title="That&apos;s what this widget is">Tooltips</a> can be attached to any element. When you hover
+the element with your mouse, the title attribute is displayed in a little box next to the element, just like a native tooltip.</p>
+<p>But as it's not a native tooltip, it can be styled. Any themes built with
+<a href="http://jqueryui.com/themeroller/" title="ThemeRoller: jQuery UI&apos;s theme builder application">ThemeRoller</a>
+will also style tooltips accordingly.</p>
+<p>Tooltips are also useful for form elements, to show some additional information in the context of each field.</p>
+<p><label for="age">Your age:</label><input id="age" title="We ask for your age only for statistical purposes."></p>
+<p>Hover the field to see the tooltip.</p>
+
+
+
+</div></div>
+
+
+<div class="col-md-6">
+  <div class="content-section">
+    <p style="text-align:center">Tooltip Example 2</p>
+    <hr>
+    <br>
+    <br>
+    <p>There are various ways to customize the animation of a tooltip.</p>
+  <p>You can use the <a id="show-option" href="http://jqueryui.com/demos/tooltip/#option-show" title="slide down on show">show</a> and
+  <a id="hide-option" href="http://jqueryui.com/demos/tooltip/#option-hide" title="explode on hide">hide</a> options.</p>
+  <p>You can also use the <a id="open-event" href="http://jqueryui.com/demos/tooltip/#event-open" title="move down on show">open event</a>.</p>
+
+
+  <br>
+  <br>
+  <br>
+  <br>  <br>
+    <br>
+
+</div></div>
+
+
+</div>
+{%endblock%}
+
+
+
+{%block script%}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+
+    $( "#show-option" ).tooltip({
+        show: {
+          effect: "slideDown",
+          delay: 250
+        }
+      });
+      $( "#hide-option" ).tooltip({
+        hide: {
+          effect: "explode",
+          delay: 250
+        }
+      });
+      $( "#open-event" ).tooltip({
+        show: null,
+        position: {
+          my: "left top",
+          at: "left bottom"
+        },
+        open: function( event, ui ) {
+          ui.tooltip.animate({ top: ui.tooltip.position().top + 10 }, "fast" );
+        }
+      });
+
+    $( document ).tooltip();
+  } );
+  </script>
+  <style>
+  label {
+    display: inline-block;
+    width: 5em;
+  }
+  </style>
+{%endblock%}

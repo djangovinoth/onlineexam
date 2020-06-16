@@ -11,7 +11,7 @@
     <p class='text-muted'>Choose Your exam level.
       <ul class="list-group">
         {%for j in jobset%}
-                <!-- <li class="list-group-item list-group-item-light"><a href="{%url 'student_attempts' level=j.level technology=technology %}">{{j.level}}</a></li> -->
+      
 <a class="btn btn-outline-info  btn-block" href="{%url 'student_attempts' level=j.level technology=technology %}">{{j.level}}</a>
         {%endfor%}
       </ul>

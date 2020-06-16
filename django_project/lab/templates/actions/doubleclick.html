@@ -1,0 +1,60 @@
+{% extends "lab/labhome.html" %}
+{% load static %}
+{%block title %}Double Click{%endblock%}
+{%block content%}
+
+<div class="col-md-6">
+<div class="content-section">
+  <p style="text-align:center"><small><b>Double Click Example </b></small></p>
+  <hr>
+  <br>
+  <br>
+  <div style="text-align: center">
+
+
+<button id="dbclick1" class="btn btn-success" ondblclick="doubleclick1()">DoubleClick</button>
+
+<br>
+<br><br>
+<p id="demo"></p>
+
+  </div>
+
+</div></div>
+
+
+<div class="col-md-6">
+<div class="content-section">
+  <p style="text-align:center"><small><b>Image Based Double Click Example </b></small></p>
+  <hr>
+  <br>
+  <br>
+  <div style="text-align: center">
+
+
+<input type="image" id="dbclick2" width="100" height="100" src="{% static 'images/vcentry.jpg' %}" ondblclick="doubleclick2()"/>
+
+<br>
+<br><br>
+<p id="demo1"></p>
+
+  </div>
+
+</div></div>
+
+{%endblock%}
+
+
+
+{%block script%}
+<script>
+function doubleclick1() {
+  document.getElementById("demo").innerHTML = "You have double clicked";
+
+}
+function doubleclick2() {
+  document.getElementById("demo1").innerHTML = "You have double clicked the image";
+
+}
+</script>
+{%endblock%}

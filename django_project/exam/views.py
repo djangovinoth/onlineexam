@@ -16,13 +16,11 @@ def addquestions(request):
         job_form = QuestionsForm(request.POST)
         if job_form.is_valid():
             totallevel=Questions.objects.filter(user=request.user,level=job_form.cleaned_data["level"],technology = job_form.cleaned_data["technology"]).count()
-            print(totallevel)
+
             if totallevel<10:
 
 
                 x = datetime.datetime.now()
-
-                print(x.strftime("%m%d%Y%H%M%S%f"))
 
                 qid=x.strftime("%m%d%Y%H%M%S%f")
                 level = job_form.cleaned_data["level"]
@@ -273,8 +271,9 @@ def student_view_java_questions(request,level,technology,attemptcount,qid='NONE'
 def student_attempts(request, level,technology):
     totalqus=Questions.objects.filter(level=level,technology=technology).count()
 
-
-
+    quesans=[]
+    ans=[]
+    qus=[]
 
     attempts=Answers.objects.filter(user=request.user,level=level,technology=technology).values('attemptid').order_by('-attemptid').distinct()
     dic=[]
@@ -282,6 +281,19 @@ def student_attempts(request, level,technology):
         totalans=Answers.objects.filter(user=request.user,level=level,technology=technology,attemptid=a['attemptid']).count()
         ans=Answers.objects.filter(user=request.user,level=level,technology=technology,attemptid=a['attemptid'])
         qus=Questions.objects.filter(level=level,technology=technology)
+
+        for q in qus:
+            sans=Answers.objects.filter(user=request.user,level=level,technology=technology,attemptid=a['attemptid'],qid=q.qid).first()
+            # print(sans)
+            if sans is None:
+                diccase={'loopid':a['attemptid'],'attemptid':'None','dicques':q.question,'answera':q.answera,'answerb':q.answerb,'answerc':q.answerc,'answerd':q.answerd,'dicans':'NO'}
+                # print(q.question,'----','Nne-')
+            else:
+                diccase={'loopid':a['attemptid'],'attemptid':sans.attemptid,'dicques':q.question,'answera':q.answera,'answerb':q.answerb,'answerc':q.answerc,'answerd':q.answerd,'dicans':sans.stdanswer}
+                # print(q.question,'----', sans.stdanswer)
+            quesans.append(diccase)
+
+
 
         crtcount=0
         for an in ans:
@@ -312,6 +324,9 @@ def student_attempts(request, level,technology):
     'attempts':attempts,
     'attemptcount':attemptcount,
     'dic':dic,
+    'qus':qus,
+    'ans':ans,
+    'quesans':quesans
     }
 
     return render(request,'exam/attempts.html',context)
@@ -321,6 +336,11 @@ def student_attempts(request, level,technology):
 
 
 def student_view_java_questions0(request,level,technology,attemptcount,qid='NONE'):
+
+    if qid=='NONE':
+        print('nerw attempt')
+
+
     print(attemptcount,'....',qid)
     jobset=Questions.objects.filter(level=level,technology=technology)
     submit=False
@@ -357,7 +377,7 @@ def student_view_java_questions0(request,level,technology,attemptcount,qid='NONE
     if request.method == 'POST':
 
         if request.POST.get("stdans") is None:
-            messages.info(request, f'Please select any options!')
+            messages.warning(request, f'Please select any options!')
         else:
 
             add=Answers.objects.filter(user=request.user,attemptid=attemptcount,level=request.POST.get("level"),technology=request.POST.get("technology"),qid=request.POST.get("qid")).count()
@@ -366,17 +386,18 @@ def student_view_java_questions0(request,level,technology,attemptcount,qid='NONE
             if add==0:
                 if request.POST.get("status")=='completed':
                     completed=Answers.objects.filter(user=request.user,attemptid=attemptcount,level=request.POST.get("level"),technology=request.POST.get("technology"))
-                    for c in completed:
-                        c.status='completed'
-                        c.complted_at=datetime.datetime.now()
-                        c.save()
-                        c.save(update_fields=['status'])
-                        c.save(update_fields=['complted_at'])
+                    for co in completed:
+                        co.status='completed'
+                        co.complted_at=datetime.datetime.now()
+                        co.save()
+                        co.save(update_fields=['status'])
+                        co.save(update_fields=['complted_at'])
                     t=Answers(user=request.user,attemptid=attemptcount,due_at=datetime.datetime.now() + datetime.timedelta(hours=1),complted_at=datetime.datetime.now(),updated_at=datetime.datetime.now(),created_at=datetime.datetime.now(),level=request.POST.get("level"),technology=request.POST.get("technology"),qid=request.POST.get("qid"),stdanswer=request.POST.get("stdans"),status=request.POST.get("status"))
                     t.save()
 
                     messages.success(request, f'You have submitted your answers thanks for your time!')
-                    # mode=Answers.objects.filter(user=request.user,level=level,technology=technology,attemptid=attemptcount,qid=jobset[int(c)-int(1)].qid)[0]
+
+                    mode=Answers.objects.filter(user=request.user,level=level,technology=technology,attemptid=attemptcount,qid=jobset[int(c)-int(1)].qid)[0]
 
 
                     # completed.status='completed'
@@ -391,6 +412,7 @@ def student_view_java_questions0(request,level,technology,attemptcount,qid='NONE
                     messages.success(request, f'Your selected answer - "{request.POST.get("stdans")}" is added successfully, Click "Next Question" to continue or Select another option and save again to update !')
                     mode=Answers.objects.filter(user=request.user,level=level,technology=technology,attemptid=attemptcount,qid=jobset[int(c)-int(1)].qid)[0]
                     submit=True
+
 
 
 
