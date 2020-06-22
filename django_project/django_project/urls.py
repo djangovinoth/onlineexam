@@ -32,6 +32,8 @@ urlpatterns = [
     path('', include('exam.urls')),
     path('', include('lab.urls')),
     path('', include('staticqusans.urls')),
+    path('', include('website.urls')),
+
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
 

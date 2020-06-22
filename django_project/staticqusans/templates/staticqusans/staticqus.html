@@ -7,11 +7,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
+    <link rel = "icon" href ="{% static 'images/tabicon.jpg' %}"
+            type = "image/x-icon">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
 
     {% if title %}
         <title>Interview Questions Blog - {{ title }}</title>
@@ -35,13 +41,23 @@
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if user.is_authenticated %}
-                {%if user.is_superuser%}
-                <a class="nav-item nav-link" href="{% url 'staticqusans' %}">Create Static Questions</a>
+
+              <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Skill Enhancement
+        </a>
+              <div class="dropdown-menu p-1 mb-3 bg-dark text-white" aria-labelledby="navbarDropdownMenuLink">
+                    {%if user.is_superuser%}
+                    <a class="dropdown-item p-1 mb-3 bg-dark text-white" href="{% url 'staticqusans' %}">Create Static Questions</a>
                     {% else %}
-                <a class="nav-item nav-link" href="{% url 'staticqusans' %}">Latest Interiew Questions</a>
+                    <a class="dropdown-item p-1 mb-3 bg-dark text-white" href="{% url 'staticqusans' %}">Latest Interiew Questions</a>
                     {% endif %}
-                <a class="nav-item nav-link" href="{% url 'labhome' %}">Lab Practice</a>
-                <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+
+          <a class="dropdown-item p-1 mb-3 bg-dark text-white" href="{% url 'blog-home' %}">Online Exam</a>
+          <a class="dropdown-item p-1 mb-3 bg-dark text-white" href="{% url 'labhome' %}">Lab Practice</a>
+        </div>
+        </li>
+
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                 <a class="nav-item nav-link" href="#">{{request.user}}</a>
 

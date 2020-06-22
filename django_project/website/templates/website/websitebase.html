@@ -1,0 +1,398 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+      <link rel = "icon" href ="{% static 'images/tabicon.jpg' %}"
+             type = "image/x-icon">
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+     <link rel="stylesheet" type="text/css" href="{% static 'blog/wmain.css' %}">
+
+
+      <link rel="stylesheet"       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+
+    {% if title %}
+         <title>Django Blog - {{ title }}</title>
+    {% else %}
+         <title>Django Blog</title>
+    {% endif %}
+</head>
+<body class="bg-white">
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-success fixed-top pb-1">
+
+
+<small class="text-white mr-4"><b>Chennai : </b></small>
+
+<small class="text-white mr-4" ><b>Phone </b></small>
+<small class="text-white mr-4"><b>9500434122</b></small>
+<small class="text-white mr-4"><b>| </b></small>
+<small class="text-white mr-4"><b>9500434122 ,</b></small>
+<small class="text-white mr-4"><b>Email : tagvcentry@hmail.com | tag@vcentry.com</b></small>
+<div  style="text-align:center">
+  <a class="navbar-brand mr-5 " href="#">
+  </a>
+
+  <a class="navbar-brand mr-5 " href="#">
+  </a>  <a class="navbar-brand mr-5 " href="#">
+    </a><a class="navbar-brand mr-4 " href="#">
+    </a>
+
+    <a class="navbar-brand mr-5 " href="#">
+    </a>  <a class="navbar-brand mr-5 " href="#">
+      </a><a class="navbar-brand mr-5 " href="#">
+      </a>
+
+      <a class="navbar-brand mr-5 " href="#">
+      </a>  <a class="navbar-brand mr-5 " href="#">
+        </a>
+
+    <a class="navbar-brand mr-5 " href="#">
+    </a>  <a class="navbar-brand mr-5 " href="#">
+      </a>
+
+      <a class="navbar-brand mr-5 " href="#">
+      </a>
+
+<a class="navbar-brand mr-4 " href="{% url 'blog-home' %}"><i class="fa fa-facebook-square" aria-hidden="true"></i>
+</a>
+<a class="navbar-brand mr-4 " href="{% url 'websitehome' %}"><i class="fa fa-twitter" aria-hidden="true"></i>
+</a>
+
+<a class="navbar-brand mr-4 " href="{% url 'blog-home' %}"><i class="fa fa-youtube-play" aria-hidden="true"></i>
+</a>
+<a class="navbar-brand mr-4 " href="{% url 'websitehome' %}"><i class="fa fa-linkedin" aria-hidden="true"></i>
+</a>
+
+
+
+
+</div>
+    </nav>
+
+    <nav style="background-color:#292929 "class="navbar navbar-expand-md navbar-dark  fixed-top mt-5">
+
+    <img src="{% static 'images/logo.jpg' %}" alt="Trulli" width="60" height="50" class=" mr-5">
+        <a class="navbar-brand mr-5" href="#"><b class="text-success">V</b><b class="text-danger">C</b><b>entry Technologies</b></a>
+
+
+        <div class="col-md-1">
+
+        </div>
+        <div class=" collapse navbar-collapse  text-right mr-5" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown mr-4">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            ABOUT US
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown mr-4">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            COURSES
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown mr-4">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            STUDENTS ZONE
+          </a>
+          <div style="background-color:#292929 " class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+            <a class="dropdown-item bg-dark text-white" href="{% url 'blog-home' %}">Online Exams</a>
+
+            <a class="dropdown-item bg-dark text-white" href="{% url 'staticqusans' %}">Interview Questions</a>
+
+
+            <a class="dropdown-item bg-dark text-white" href="{% url 'labhome' %}">Lab Exercises</a>
+          </div>
+        </li>
+
+
+        <li class="nav-item dropdown mr-4">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            SERVICES
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown mr-4">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            CAREERS
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown mr-4">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            CONTACT US
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+
+
+
+    </nav>
+</header>
+
+<br><br><br><br>
+
+
+{%block maincontent%}{%endblock maincontent%}
+
+{%block aboutus%}{%endblock aboutus%}
+
+
+
+{%block countbox%}{%endblock countbox%}
+{%block whytochooseus%}{%endblock whytochooseus%}
+{%block chooseuscard%}{%endblock chooseuscard%}
+
+{%block currenttrending%}{%endblock currenttrending%}
+
+{%block cards%}{%endblock cards%}
+
+{%block upcoming%}{%endblock upcoming%}
+
+
+
+
+
+
+<div class="container-fluid  text-white text-center text-md-left" style="background-color:#f08b4d">
+
+  <!-- Grid row -->
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="  mt-md-0 mt-3">
+
+      <!-- Content -->
+      <p><u><b>Top Categories</b></u></p>
+      <a href="#" style="color:#50505b">Master Program |</a>
+      <a href="#" style="color:#50505b">Data Warehousing Training in Chennai |</a>
+      <a href="#" style="color:#50505b">Database Developer Training in Chennai |</a>
+      <a href="#" style="color:#50505b">DBA Training |</a>
+      <a href="#" style="color:#50505b">Web Designing Training |</a>
+      <a href="#" style="color:#50505b">Digital Marketing Training in Chennai |</a>
+      <a href="#" style="color:#50505b">Java Training in Chennai |</a>
+      <a href="#" style="color:#50505b">Software Testing Training |</a>
+      <a href="#" style="color:#50505b">Mobile Applications Training |</a>
+<a href="#" style="color:#50505b">Robotic Process Automation Training in Chennai |</a>
+
+
+
+
+
+
+
+
+    </div>
+    <br>
+    <!-- Grid column -->
+
+
+
+  </div>
+  <!-- Grid row -->
+
+</div>
+
+<!-- Footer -->
+<footer class="page-footer text-white font-small blue pt-4" style="background-color:#282a2b">
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <img src="{% static 'images/tabicon.jpg' %}" alt="Trulli" width="60" height="50" class=" mr-1">
+
+
+        <a class="navbar-brand mr-2" href="#"><b class="text-success">V</b><b class="text-danger">C</b><b class="text-white">entry Technologies</b></a>
+        <hr color="red">
+        <p>Vcentry has been established with the objective of offering superior IT training and consulting services. Vcentry provides an integrated IT training and consulting services, catering to all the human resource and training requirements of a corporate since 2014.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h6 >Students zone</h6>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="{% url 'blog-home' %}">Online Exams</a>
+          </li>
+          <li>
+            <a href="{% url 'staticqusans' %}">Interview Questions</a>
+          </li>
+          <li>
+            <a href="{% url 'labhome' %}">Lab Exercises</a>
+          </li>
+
+        </ul>
+
+      </div>
+      <div class="col-md-2 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h6 >Services</h6>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h6 >Trending Courses</h6>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <div class="">
+    <a class="mr-4 ">Follow Us On  : </a>
+    <a class="navbar-brand mr-4 " href="{% url 'blog-home' %}"><i class="fa fa-facebook-square" aria-hidden="true"></i>
+    </a>
+    <a class="navbar-brand mr-4 " href="{% url 'websitehome' %}"><i class="fa fa-twitter" aria-hidden="true"></i>
+    </a>
+
+    <a class="navbar-brand mr-4 " href="{% url 'blog-home' %}"><i class="fa fa-youtube-play" aria-hidden="true"></i>
+    </a>
+    <a class="navbar-brand mr-4 " href="{% url 'websitehome' %}"><i class="fa fa-linkedin" aria-hidden="true"></i>
+    </a>
+  </div>
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright: VCentry Technologies
+
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <link rel="stylesheet" href="/resources/demos/style.css">
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script>
+      $( function() {
+        var availableTags = [
+          "ActionScript",
+          "AppleScript",
+          "Asp",
+          "BASIC",
+          "C",
+          "C++",
+          "Clojure",
+          "COBOL",
+          "ColdFusion",
+          "Erlang",
+          "Fortran",
+          "Groovy",
+          "Haskell",
+          "Java",
+          "JavaScript",
+          "Lisp",
+          "Perl",
+          "PHP",
+          "Python",
+          "Ruby",
+          "Scala",
+          "Scheme"
+        ];
+        $( "#tags" ).autocomplete({
+          source: availableTags
+        });
+      } );
+      </script>
+
+</body>
+</html>

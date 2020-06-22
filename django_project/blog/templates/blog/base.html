@@ -3,15 +3,20 @@
 <html>
 <head>
 
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
+    <link rel = "icon" href ="{% static 'images/tabicon.jpg' %}"
+            type = "image/x-icon">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
 
     {% if title %}
         <title>Django Blog - {{ title }}</title>
@@ -24,6 +29,8 @@
       <nav class="navbar navbar-expand-md navbar-dark bg-success fixed-top">
         <div class="container">
           <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Online Exam</a>
+          <a class="navbar-brand mr-4" href="{% url 'websitehome' %}">Website Home</a>
+
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -35,13 +42,23 @@
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if user.is_authenticated %}
-                {%if user.is_superuser%}
-                <a class="nav-item nav-link" href="{% url 'staticqusans' %}">Create Static Questions</a>
+
+              <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Skill Enhancement
+        </a>
+              <div class="dropdown-menu p-1 mb-3 bg-success text-white" aria-labelledby="navbarDropdownMenuLink">
+                    {%if user.is_superuser%}
+                    <a class="dropdown-item p-1 mb-3 bg-success text-white" href="{% url 'staticqusans' %}">Create Static Questions</a>
                     {% else %}
-                <a class="nav-item nav-link" href="{% url 'staticqusans' %}">Latest Interiew Questions</a>
+                    <a class="dropdown-item p-1 mb-3 bg-success text-white" href="{% url 'staticqusans' %}">Latest Interiew Questions</a>
                     {% endif %}
-                <a class="nav-item nav-link" href="{% url 'labhome' %}">Lab Practice</a>
-                <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+
+          <a class="dropdown-item p-1 mb-3 bg-success text-white" href="{% url 'blog-home' %}">Online Exam</a>
+          <a class="dropdown-item p-1 mb-3 bg-success text-white" href="{% url 'labhome' %}">Lab Practice</a>
+        </div>
+        </li>
+
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                 <a class="nav-item nav-link" href="#">{{request.user}}</a>
 
@@ -65,8 +82,8 @@
           <h3>Technologies</h3>
           <p class='text-muted'>Choose your technology to Create/Update Questions
             <ul class="list-group">
-              <li class="list-group-item list-group-item-light"><a href="{%url 'add-questions'%}">Add Questions</a></li>
-              <li class="list-group-item list-group-item-light"><a href="{%url 'show_levels' 'JAVA'%}">Java</a></li>
+              <a class="btn btn-primary" style="color:white" href="{%url 'add-questions'%}">Add Questions</a>
+              <li class="list-group-item list-group-item-light mt-4"><a href="{%url 'show_levels' 'JAVA'%}">Java</a></li>
               <li class="list-group-item list-group-item-light"><a href="{%url 'show_levels' 'PYTHON'%}">Python</a></li>
               <li class="list-group-item list-group-item-light"><a href="{%url 'show_levels' 'MANUALTESTING'%}">Manual Testing</a></li>
               <li class="list-group-item list-group-item-light"><a href="{%url 'show_levels' 'SELENIUM'%}">Selenium</a></li>

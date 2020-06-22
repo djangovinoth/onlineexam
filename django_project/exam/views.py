@@ -94,7 +94,7 @@ def editquestions(request,level,technology,qid):
 
     else:
 
-        job_form = QuestionsForm()
+        job_form = QuestionsForm(Questions.objects.filter(user=request.user,level=level,technology=technology,qid=qid).values('question','answera','answerb','answerc','answerd')[0])
     context={
     'job_form':job_form,
     'jobset':jobset

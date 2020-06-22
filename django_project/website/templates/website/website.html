@@ -1,0 +1,714 @@
+{% extends "website/websitebase.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+      <link rel = "icon" href ="{% static 'images/tabicon.jpg' %}"
+             type = "image/x-icon">
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+     <link rel="stylesheet" type="text/css" href="{% static 'blog/wmain.css' %}">
+
+
+      <link rel="stylesheet"       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+
+    {% if title %}
+         <title>Django Blog - {{ title }}</title>
+    {% else %}
+         <title>Django Blog</title>
+    {% endif %}
+</head>
+<body class="bg-white">
+
+
+
+
+
+
+{%block maincontent%}
+<main class="col-md-24" style="background-color:#f08b4d">
+  <br><br><br>
+<h3 class="mr-5" style="text-align:center"><b class="text-white">VCentry Technologies</b></h3>
+<h5 class="mr-5 text-white" style="text-align:center">Hands On Training Institue  </h5>
+<br><br>
+  <form >
+    <div class="row">
+
+
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4 input-group " style="text-align:center">
+<input id="tags" type="text" class="form-control center-block" placeholder="Search your Query">
+<div class="input-group-append">
+<button class="btn btn-secondary" type="button">
+  <i class="fa fa-search"></i>
+</button>
+</div>
+</div>    </div>
+        </form>
+          <br><br><br>  <br><br><br>
+
+</main>
+
+
+{%endblock maincontent%}
+
+{%block aboutus%}
+
+<div class="row">
+
+
+<div class="col-md-12 mr-5 mt-4" style="text-align:center">
+<h4><b style=" border-bottom: 5px solid DARKSLATEGRAY;padding: 0 0 4px;">About Us</b></h4>
+<br>
+<div class=" col-md-12" style="text-align:center">
+  <div class="row">
+
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8">
+      <p>Vcentry has been established with the objective of offering superior IT training and consulting services. Vcentry provides an integrated IT training and consulting services, catering to all the human resource and training requirements of a corporate since 2014. Vcentry focuses on providing comprehensive Talent management solutions to the customers across various locations (currently Chennai, Coimbatore, Bangalore and Trivandrum). Our talent management pool has always been striving forward to bring the corporate and professionals together to a single point. We have always been victorious in what we do, because we know that having the right people in your business is crucial. </p>
+
+    </div>
+
+    <div class="col-md-2">
+
+    </div>
+  </div>
+</div></div>
+
+</div>{%endblock aboutus%}
+
+
+{%block countbox%}
+
+
+
+
+<div class="row ml-5 ">
+
+
+
+
+<div class="cardb cardb-1 ml-5 ">
+<br>
+<h5 class="text-danger">
+  <b>
+  12000+</b>
+</h5>
+
+<p class="text-primary">
+  <b>
+SATISFIED STUDENTS
+</b>
+</p>
+</div>
+
+
+<div class="cardb cardb-1 ml-5 ">
+<br>
+<h5 class="text-danger">
+  <b>
+  100+</b>
+</h5>
+
+<p class="text-primary">
+  <b>
+CERTIFIED TRAINERS
+</b>
+</p>
+</div>
+
+
+<div class="cardb cardb-1 ml-5 ">
+<br>
+<h5 class="text-danger">
+  <b>
+  50+</b>
+</h5>
+
+<p class="text-primary">
+  <b>
+COURSES
+</b>
+</p>
+</div>
+
+
+<div class="cardb cardb-1 ml-5 ">
+<br>
+<h5 class="text-danger">
+  <b>
+  150+</b>
+</h5>
+
+<p class="text-primary">
+  <b>
+REALTIME PROJECTS
+</b>
+</p>
+</div>
+
+<div class="cardb cardb-1 ml-5 ">
+<br>
+<h5 class="text-danger">
+  <b>
+  100+</b>
+</h5>
+
+<p class="text-primary">
+  <b>
+CORPORATE TRANININGS
+</b>
+</p>
+</div>
+
+
+
+</div>
+
+
+{%endblock countbox%}
+
+
+{%block whytochooseus%}
+
+<hr>
+
+<div class="row">
+
+
+<div class="col-md-12 mr-5 mt-4" style="text-align:center">
+<h4><b style=" border-bottom: 5px solid DARKSLATEGRAY;padding: 0 0 4px;">Why to Choose Us</b></h4>
+<br>
+<div class=" col-md-12" style="text-align:center">
+  <div class="row">
+
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8">
+      <p>A Choice that makes a big difference in your career. Vcentry Technologies is committed to helping its students to reach their goals and their training experiences, by providing the innovative surroundings and faculties.
+
+</p>
+
+    </div>
+
+    <div class="col-md-2">
+
+    </div>
+  </div>
+</div></div>
+
+</div>
+
+
+{%endblock whytochooseus%}
+
+{%block chooseuscard%}
+
+<div class="row ml-3">
+
+
+
+
+<div id="cardid" class="carda carda-1">
+<br>
+<div >
+
+  <a href="#"><i class="fa fa-users fa-3x" aria-hidden="true"></i></a>
+
+</div>
+<br><br>
+<h5 >
+  <b>
+  IT experts as Trainers</b>
+</h5>
+
+<p >
+<small>
+Learning a technology with a professional who is well expertise in that solve 60% of your needs.
+</small>
+</p>
+</div>
+
+
+<div id="cardid" class="carda carda-1">
+<br>
+<div >
+
+  <a href="#"><i class="fa fa-desktop fa-3x" aria-hidden="true"></i></a>
+
+</div>
+<br><br>
+<h5 >
+  <b>
+  24 Hours Lab Support</b>
+</h5>
+
+<p >
+<small>
+Learning a technology with a professional who is well expertise in that solve 60% of your needs.
+</small>
+</p>
+</div>
+
+
+<div id="cardid" class="carda carda-1">
+<br>
+<div >
+
+  <a href="#"><i class="fa fa-clock-o fa-3x" aria-hidden="true"></i></a>
+
+</div>
+<br><br>
+<h5 >
+  <b>
+    Flexible Timings
+</b>
+</h5>
+
+<p >
+<small>
+Learning a technology with a professional who is well expertise in that solve 60% of your needs.
+</small>
+</p>
+</div>
+
+
+<div id="cardid" class="carda carda-1">
+<br>
+<div >
+
+  <a href="#"><i class="fa fa-book fa-3x" aria-hidden="true"></i></a>
+
+</div>
+<br><br>
+<h5 >
+  <b>
+    Interview Preparation
+</b>
+</h5>
+
+<p >
+<small>
+Learning a technology with a professional who is well expertise in that solve 60% of your needs.
+</small>
+</p>
+</div>
+
+
+
+<div id="cardid" class="carda carda-1">
+<br>
+<div >
+
+  <a href="#"><i class="fa fa fa-money fa-3x" aria-hidden="true"></i></a>
+
+</div>
+<br><br>
+<h5 >
+  <b>
+    Affordable Fees
+</b>
+</h5>
+
+<p >
+<small>
+Learning a technology with a professional who is well expertise in that solve 60% of your needs.
+</small>
+</p>
+</div>
+
+
+
+</div>
+
+
+
+{%endblock chooseuscard%}
+
+
+{%block currenttrending%}
+<hr>
+<div class="row">
+
+
+<div class="col-md-12 mr-5 mt-4" style="text-align:center">
+<h4><b style=" border-bottom: 5px solid DARKSLATEGRAY;padding: 0 0 4px;">Current Trending Course </b></h4>
+<br>
+
+</div>
+
+
+
+</div>
+
+{%endblock currenttrending%}
+
+
+{%block cards%}
+
+
+<div class="row ml-5">
+  <!--Carousel Wrapper-->
+  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+    <!--Controls-->
+    <div class="controls-top">
+      <a class="btn-floating mr-5" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left fa-3x" aria-hidden="true"></i>
+  </a>
+      <a class="btn-floating mr-2" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right fa-3x" aria-hidden="true"></i>
+  </a>
+    </div>
+
+    <!--/.Controls-->
+
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+      <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+      <li data-target="#multi-item-example" data-slide-to="1"></li>
+
+    </ol>
+    <!--/.Indicators-->
+
+    <!--Slides-->
+    <div class="carousel-inner mt-5" role="listbox">
+
+      <!--First slide-->
+      <div class="carousel-item active">
+
+        <div class="col-md-2 mr-5" style="float:left">
+         <div class="card mb-2 border-0">
+            <img class="card-img-top"
+              src="{% static 'images/selenium1.jpeg' %}" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Selenium</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-info text-white">View Details</a>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2 mr-5" style="float:left">
+          <div class="card mb-2 border-0">
+            <img class="card-img-top"  height="230"
+              src="{% static 'images/angular1.png' %}" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Angular</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-info text-white">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2 mr-5" style="float:left">
+
+          <div class="card mb-2 border-0">
+
+
+            <img class="card-img-top" height="230"
+              src="{% static 'images/python-django.jpg' %}" alt="Card image cap">
+
+
+            <div class="card-body">
+
+              <h4 class="card-title">Django</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+
+              <a class="btn btn-info text-white">View Details</a>
+            </div>
+          </div>
+        </div>
+
+         <div class="col-md-2 mr-5" style="float:left">
+         <div class="card mb-2 border-0">
+            <img class="card-img-top" height="230"
+              src="{% static 'images/java.png' %}" alt="Card image cap">
+
+            <div class="card-body">
+              <h4 class="card-title">Java</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-info text-white">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2" style="float:left">
+          <div class="card mb-2 border-0">
+            <img class="card-img-top" height="230"
+              src="{% static 'images/devops.png' %}" alt="Card image cap">
+
+                  <div class="card-body">
+              <h4 class="card-title">DevOps</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-info text-white">View Details</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--/.First slide-->
+
+      <!--Second slide-->
+      <div class="carousel-item">
+
+        <div class="col-md-2" style="float:left">
+          <div class="card mb-2 border-0">
+            <img class="card-img-top" height="230"
+              src="{% static 'images/Flask.png' %}" alt="Card image cap">
+
+                  <div class="card-body">
+              <h4 class="card-title">Flask</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-info text-white">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2" style="float:left">
+          <div class="card mb-2 border-0">
+            <img class="card-img-top" height="230"
+              src="{% static 'images/tableau1.png' %}" alt="Card image cap">
+
+
+                <div class="card-body">
+              <h4 class="card-title">Tableau</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-info text-white">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2" style="float:left">
+          <div class="card mb-2 border-0">
+            <img class="card-img-top" height="230"
+              src="{% static 'images/python.png' %}" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Python</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-info text-white">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2" style="float:left">
+          <div class="card mb-2 border-0">
+            <img class="card-img-top" height="230"
+              src="{% static 'images/RStudio.png' %}" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">RStudio</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-info text-white">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2" style="float:left">
+          <div class="card mb-2 border-0">
+            <img class="card-img-top" height="230"
+              src="{% static 'images/azure.png' %}" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Azure</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-info text-white">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2" style="float:left">
+          <div class="card mb-2 border-0">
+            <img class="card-img-top" height="230"
+              src="{% static 'images/amazon.jpeg' %}" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Amazon</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-info text-white">View Details</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--/.Second slide-->
+
+
+
+    </div>
+    <!--/.Slides-->
+
+  </div>
+  <!--/.Carousel Wrapper-->
+
+</div>
+
+
+<br><br>
+
+{%endblock cards%}
+
+
+
+
+
+
+{%block upcoming%}
+<hr>
+<div class="row col-md-24">
+
+
+<div class="col-md-4 mr-5 mt-4" style="text-align:center">
+<h4><b style=" border-bottom: 5px solid DARKSLATEGRAY;padding: 0 0 4px;">Upcoming Batches </b></h4>
+<br>
+
+<div class="col-md-12 mr-5">
+
+
+
+<table class="col-md-12 mr-5"  >
+
+
+  <tr border="1">
+    <td rowspan="2">June 30th</td>
+    <th colspan="2" scope="colgroup"><p>Selenium Online Training</p></th>
+
+  </tr>
+  <tr>
+    <th scope="col"><p><i class="fa fa-map-marker" aria-hidden="true"> Online </i>
+    <i class="fa fa-phone" aria-hidden="true"> : 9500434122</i>
+    </p></th>
+
+  </tr>
+
+
+
+
+</table>
+<hr>
+<table class="col-md-12 mr-5"  >
+
+
+  <tr border="1">
+    <td rowspan="2">June 30th</td>
+    <th colspan="2" scope="colgroup"><p>Selenium Online Training</p></th>
+
+  </tr>
+  <tr>
+    <th scope="col"><p><i class="fa fa-map-marker" aria-hidden="true"> Online </i>
+    <i class="fa fa-phone" aria-hidden="true"> : 9500434122</i>
+    </p></th>
+
+  </tr>
+
+
+
+
+</table>
+</div>
+
+
+
+
+
+
+</div>
+<div class="col-md-2 mr-5 mt-4" style="text-align:center">
+  </div>
+<div class="col-md-4 mr-5 mt-4" style="text-align:center">
+<h4><b style=" border-bottom: 5px solid DARKSLATEGRAY;padding: 0 0 4px;">For Enquiry Fill the form </b></h4>
+<br>
+
+<div class="">
+
+
+<form class="col-md-10 " method="post">
+
+
+
+  <input type="text" name="" value="" class="form-control mt-1 fa fa-user" placeholder="Enter your name *" ></input>
+  <input type="text" name="" value="" class="form-control mt-1 fa fa-user" placeholder="Enter your mobile *">
+    <input type="text" name="" value="" class="form-control mt-1 fa fa-user" placeholder="Enter your email *">
+      <select id="courseid" name="coursename" class="form-control mt-1 fa fa-user" aria-required="true" aria-invalid="false"><option value="Select Training Course">Select Training Course</option><optgroup label="RPA TRAINING"><option value="Blue Prism Training">Blue Prism Training</option><option value="UiPath Training">UiPath Training</option><option value="Automation Anywhere Training">Automation Anywhere Training</option></optgroup><optgroup label="Cloud Computing"><option value="Azure Training">Azure Training</option><option value="AWS Training">AWS Training</option><option value="Salesforce Training">Salesforce Training</option><option value="Google Cloud Platform Training">Google Cloud Platform Training</option><option value="OpenNebula Training">OpenNebula Training</option><option value="OpenSpan Training">OpenSpan Training</option><option value="OpenStack Training">OpenStack Training</option><option value="Implementing Microsoft Azure Infrastructure Solutions Training">Implementing Microsoft Azure Infrastructure Solutions Training</option></optgroup><optgroup label="BigData"><option value="Hadoop Training">Hadoop Training</option><option value="Big Data Analytics Training">Big Data Analytics Training</option><option value="Apache Spark Training">Apache Spark Training</option></optgroup><optgroup label="Web Development"><option value="AngularJS Training">AngularJS Training</option><option value="Angular 7 Training">Angular 7 Training</option><option value="Angular 8 Training">Angular 8 Training</option><option value="JavaScript Training">JavaScript Training</option><option value="Node JS Training">Node JS Training</option><option value="React JS Training">React JS Training</option><option value="React Native Training">React Native Training</option><option value="Ionic Framework Training">Ionic Framework Training</option><option value="Less JS Training">Less JS Training</option><option value="CofeeScript Training">CofeeScript Training</option><option value="PHP Training">PHP Training</option><option value="Full Stack Developer Training">Full Stack Developer Training</option><option value="Graphic Design Training">Graphic Design Training</option><option value="CSS Training">CSS Training</option><option value="HTML Training">HTML Training</option><option value="ASP.NET MVC + AngularJS Training">ASP.NET MVC + AngularJS Training</option></optgroup><optgroup label="Mobile Application"><option value="Android Training">Android Training</option><option value="iOS Training">iOS Training</option><option value="Swift Programming Training">Swift Programming Training</option><option value="Kotlin Training">Kotlin Training</option><option value="Flutter Dart Training">Flutter Dart Training</option></optgroup><optgroup label="Trending Technologies"><option value="Python Training">Python Training</option><option value="Data Science Training">Data Science Training</option><option value="R Programming Training">R Programming Training</option><option value="DevOps Training">DevOps Training</option><option value="IoT Training">IoT Training</option><option value="Machine Learning Training">Machine Learning Training</option><option value="Blockchain Training">Blockchain Training</option><option value="Mean Stack Training">MEAN Stack Training</option><option value="Artificial Intelligence Training">Artificial Intelligence Training</option><option value="Data Analytics Using Python Training">Data Analytics Using Python Training</option><option value="RPA-TRAINING">RPA-TRAINING</option></optgroup><optgroup label="Software Testing"><option value="Manual Testing Training">Manual Testing Training</option><option value="QTP / UFT Training">QTP / UFT Training</option><option value="Selenium Training">Selenium Training</option><option value="Selenium with Python Training">Selenium with Python Training</option><option value="Perfecto Mobile Testing Training">Perfecto Mobile Testing Training</option><option value="ETL Testing Training">ETL Testing Training</option><option value="JMeter Training">JMeter Training</option><option value="LoadRunner Training">LoadRunner Training</option><option value="Performance Engineering Training">Performance Engineering Training</option><option value="Big Data Testing Training">Big Data Testing Training</option><option value="Protractor Automation">Protractor Automation</option></optgroup><optgroup label="Microsoft Technologies"><option value="Dot Net Training">Dot Net Training</option><option value="ASP.NET MVC Training">ASP.NET MVC Training</option><option value="ASP.NET with Angular Training">ASP.NET with Angular Training</option><option value="SharePoint Training">SharePoint Training</option><option value="Advanced Excel Training">Advanced Excel Training</option><option value="Microsoft Excel Macro Training">Microsoft Excel Macro Training</option></optgroup><optgroup label="JAVA"><option value="Core Java Training">Core Java Training</option><option value="Java J2EE Training">Java J2EE Training</option><option value="Advanced Java Training">Advanced Java Training</option><option value="Hibernate Training">Hibernate Training</option><option value="Spring Training">Spring Training</option><option value="Struts Training">Struts Training</option><option value="Java 8 Training">Java 8 Training</option></optgroup><optgroup label="Project Management"><option value="Primavera P6 Training">Primavera P6 Training</option><option value="Microsoft Project Training">Microsoft Project Training</option><option value="PMP Training">PMP Training</option><option value="Scrum Master Training">Scrum Master Training</option><option value="Business Analytics Training">Business Analytics Training</option><option value="ITIL Training">ITIL Training</option><option value="Prince2 Training">Prince2 Training</option><option value="MSBI SSIS Training">MSBI SSIS Training</option><option value="MSBI SSAS Training">MSBI SSAS Training</option><option value="MSBI SSRS Training">MSBI SSRS Training</option></optgroup><optgroup label="Data Warehousing"><option value="Informatica Training">Informatica Training</option><option value="Microstrategy Training">Microstrategy Training</option><option value="Qlikview Training">Qlikview Training</option><option value="Qlik Sense Training">Qlik Sense Training</option><option value="Tableau Training">Tableau Training</option><option value="Teradata Training">Teradata Training</option><option value="SAS Training">SAS Training</option><option value="Cognos Training">Cognos Training</option></optgroup><optgroup label="Oracle"><option value="Oracle PL/SQL Training">Oracle PL/SQL Training</option><option value="Oracle DBA Training">Oracle DBA Training</option><option value="Oracle Application Technical Training">Oracle Application Technical Training</option><option value="ORACLE RAC Training">ORACLE RAC Training</option><option value="ORACLE APPS SCM Training">ORACLE APPS SCM Training</option><option value="Oracle Apps HRMS Training">Oracle Apps HRMS Training</option><option value="Oracle Apps Finance Training">Oracle Apps Finance Training</option><option value="PeopleSoft HCM Training">PeopleSoft HCM Training</option><option value="PeopleSoft Finance Training">PeopleSoft Finance Training</option></optgroup><optgroup label="DataBase Developer"><option value="MongoDB Training">MongoDB Training</option><option value="Apache Cassandra Training">Apache Cassandra Training</option><option value="Sybase Training">Sybase Training</option><option value="Informix Training">Informix Training</option><option value="Performance Tuning Training">Performance Tuning Training</option></optgroup><optgroup label="Other Trainings"><option value="Ethical Hacking Training">Ethical Hacking Training</option><option value="C C++ Training">C C++ Training</option><option value="Data Modeling Training">Data Modeling Training</option><option value="Unix Shell Training">Unix Shell Training</option><option value="Tensorflow Training">Tensorflow Training</option><option value="Workday Training">Workday Training</option><option value="PEGA Training">PEGA Training</option><option value="CCNA Training">CCNA Training</option><option value="Digital Marketing Training">Digital Marketing Training</option><option value="Go Programming Training">Go Programming Training</option><option value="Arduino Training">Arduino Training</option><option value="Rust Programming Training">Rust Programming Training</option><option value="ELM Training">ELM Training</option><option value="Cyber Security Training">Cyber Security Training</option><option value="BizTalk Server Training">BizTalk Server Training</option></optgroup></select>
+
+<textarea name="name" rows="6" cols="50" class="form-control mt-1 fa fa-user" placeholder="Your Message *"></textarea>
+<button type="submit" class="btn btn-success mt-1"name="button">Submit</button>
+<br><br>
+</form>
+</div>
+</div>
+
+</div>
+
+{%endblock upcoming%}
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <link rel="stylesheet" href="/resources/demos/style.css">
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script>
+      $( function() {
+        var availableTags = [
+          "ActionScript",
+          "AppleScript",
+          "Asp",
+          "BASIC",
+          "C",
+          "C++",
+          "Clojure",
+          "COBOL",
+          "ColdFusion",
+          "Erlang",
+          "Fortran",
+          "Groovy",
+          "Haskell",
+          "Java",
+          "JavaScript",
+          "Lisp",
+          "Perl",
+          "PHP",
+          "Python",
+          "Ruby",
+          "Scala",
+          "Scheme"
+        ];
+        $( "#tags" ).autocomplete({
+          source: availableTags
+        });
+      } );
+      </script>
+
+</body>
+</html>

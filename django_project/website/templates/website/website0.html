@@ -1,0 +1,536 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+      <link rel = "icon" href ="{% static 'images/tabicon.jpg' %}"
+             type = "image/x-icon">
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+     <link rel="stylesheet" type="text/css" href="{% static 'blog/wmain.css' %}">
+
+
+      <link rel="stylesheet"       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+
+    {% if title %}
+         <title>Django Blog - {{ title }}</title>
+    {% else %}
+         <title>Django Blog</title>
+    {% endif %}
+</head>
+<body class="bg-white">
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-success fixed-top pb-1">
+
+
+<small class="text-white mr-4"><b>Chennai : </b></small>
+
+<small class="text-white mr-4" ><b>Phone </b></small>
+<small class="text-white mr-4"><b>9500434122</b></small>
+<small class="text-white mr-4"><b>| </b></small>
+<small class="text-white mr-4"><b>9500434122 ,</b></small>
+<small class="text-white mr-4"><b>Email : tagvcentry@hmail.com | tag@vcentry.com</b></small>
+<div  style="text-align:center">
+  <a class="navbar-brand mr-5 " href="#">
+  </a>
+
+  <a class="navbar-brand mr-5 " href="#">
+  </a>  <a class="navbar-brand mr-5 " href="#">
+    </a><a class="navbar-brand mr-4 " href="#">
+    </a>
+
+    <a class="navbar-brand mr-5 " href="#">
+    </a>  <a class="navbar-brand mr-5 " href="#">
+      </a><a class="navbar-brand mr-5 " href="#">
+      </a>
+
+      <a class="navbar-brand mr-5 " href="#">
+      </a>  <a class="navbar-brand mr-5 " href="#">
+        </a>
+
+    <a class="navbar-brand mr-5 " href="#">
+    </a>  <a class="navbar-brand mr-5 " href="#">
+      </a>
+
+      <a class="navbar-brand mr-5 " href="#">
+      </a>
+
+<a class="navbar-brand mr-4 " href="{% url 'blog-home' %}"><i class="fa fa-facebook-square" aria-hidden="true"></i>
+</a>
+<a class="navbar-brand mr-4 " href="{% url 'websitehome' %}"><i class="fa fa-twitter" aria-hidden="true"></i>
+</a>
+
+<a class="navbar-brand mr-4 " href="{% url 'blog-home' %}"><i class="fa fa-youtube-play" aria-hidden="true"></i>
+</a>
+<a class="navbar-brand mr-4 " href="{% url 'websitehome' %}"><i class="fa fa-linkedin" aria-hidden="true"></i>
+</a>
+
+
+
+
+</div>
+    </nav>
+
+    <nav style="background-color:#292929 "class="navbar navbar-expand-md navbar-dark  fixed-top mt-5">
+
+    <img src="{% static 'images/logo.jpg' %}" alt="Trulli" width="60" height="50" class=" mr-5">
+        <a class="navbar-brand mr-5" href="#"><b class="text-success">V</b><b class="text-danger">C</b><b>entry Technologies</b></a>
+
+
+        <div class="col-md-1">
+
+        </div>
+        <div class=" collapse navbar-collapse  text-right mr-5" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown mr-4">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            ABOUT US
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown mr-4">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            COURSES
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown mr-4">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            STUDENTS ZONE
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+
+
+        <li class="nav-item dropdown mr-4">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            SERVICES
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown mr-4">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            CAREERS
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown mr-4">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            CONTACT US
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+
+
+
+    </nav>
+</header>
+
+<br><br><br><br>
+<main class="col-md-24" style="background-color:#f08b4d">
+  <br><br><br>
+<h3 class="mr-5" style="text-align:center"><b class="text-white">VCentry Technologies</b></h3>
+<h5 class="mr-5 text-white" style="text-align:center">Hands On Training Institue  </h5>
+<br><br>
+  <form >
+    <div class="row">
+
+
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4 input-group " style="text-align:center">
+<input id="tags" type="text" class="form-control center-block" placeholder="Search your Query">
+<div class="input-group-append">
+<button class="btn btn-secondary" type="button">
+  <i class="fa fa-search"></i>
+</button>
+</div>
+</div>    </div>
+        </form>
+          <br><br><br>  <br><br><br>
+
+</main>
+
+<div class="row">
+
+
+<div class="col-md-12 mr-5 mt-4" style="text-align:center">
+<h4><b style=" border-bottom: 5px solid DARKSLATEGRAY;padding: 0 0 4px;">About Us</b></h4>
+<br>
+<div class=" col-md-12" style="text-align:center">
+  <div class="row">
+
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8">
+      <p>Vcentry has been established with the objective of offering superior IT training and consulting services. Vcentry provides an integrated IT training and consulting services, catering to all the human resource and training requirements of a corporate since 2014. Vcentry focuses on providing comprehensive Talent management solutions to the customers across various locations (currently Chennai, Coimbatore, Bangalore and Trivandrum). Our talent management pool has always been striving forward to bring the corporate and professionals together to a single point. We have always been victorious in what we do, because we know that having the right people in your business is crucial. </p>
+
+    </div>
+
+    <div class="col-md-2">
+
+    </div>
+  </div>
+</div></div>
+
+</div>
+
+
+
+<div class="row ml-3">
+
+
+
+
+<div class="card card-1">
+<br>
+<h5 class="text-danger">
+  <b>
+  12000+</b>
+</h5>
+
+<p class="text-primary">
+  <b>
+SATISFIED STUDENTS
+</b>
+</p>
+</div>
+
+
+<div class="card card-1">
+<br>
+<h5 class="text-danger">
+  <b>
+  100+</b>
+</h5>
+
+<p class="text-primary">
+  <b>
+CERTIFIED TRAINERS
+</b>
+</p>
+</div>
+
+
+<div class="card card-1">
+<br>
+<h5 class="text-danger">
+  <b>
+  50+</b>
+</h5>
+
+<p class="text-primary">
+  <b>
+COURSES
+</b>
+</p>
+</div>
+
+
+<div class="card card-1">
+<br>
+<h5 class="text-danger">
+  <b>
+  150+</b>
+</h5>
+
+<p class="text-primary">
+  <b>
+REALTIME PROJECTS
+</b>
+</p>
+</div>
+
+<div class="card card-1">
+<br>
+<h5 class="text-danger">
+  <b>
+  100+</b>
+</h5>
+
+<p class="text-primary">
+  <b>
+CORPORATE TRANININGS
+</b>
+</p>
+</div>
+
+
+
+</div>
+
+
+
+<div class="row">
+
+
+<div class="col-md-12 mr-5 mt-4" style="text-align:center">
+<h4><b style=" border-bottom: 5px solid DARKSLATEGRAY;padding: 0 0 4px;">Current Trending Course </b></h4>
+<br>
+
+</div>
+
+
+
+</div>
+
+<div class="row ml-5">
+  <!--Carousel Wrapper-->
+  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+    <!--Controls-->
+    <div class="controls-top">
+      <a class="btn-floating mr-5" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left fa-3x" aria-hidden="true"></i>
+  </a>
+      <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right fa-3x" aria-hidden="true"></i>
+  </a>
+    </div>
+    <!--/.Controls-->
+
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+      <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+      <li data-target="#multi-item-example" data-slide-to="1"></li>
+
+    </ol>
+    <!--/.Indicators-->
+
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+
+      <!--First slide-->
+      <div class="carousel-item active">
+
+        <div class="col-md-3" style="float:left">
+         <div class="card mb-2">
+            <img class="card-img-top"
+              src="{% static 'images/selenium1.jpeg' %}" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Selenium</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-primary">Button</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3" style="float:left">
+          <div class="card mb-2">
+            <img class="card-img-top"
+              src="{% static 'images/angular1.png' %}" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Angular</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-primary">Button</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3" style="float:left">
+
+          <div class="card mb-2">
+            <br>
+<br>
+            <img class="card-img-top"
+              src="{% static 'images/python-django.jpg' %}" alt="Card image cap">
+              <br>
+              <br>  <br>
+                <br>
+            <div class="card-body">
+
+              <h4 class="card-title">Django</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+
+              <a class="btn btn-primary">Button</a>
+            </div>
+          </div>
+        </div>
+
+         <div class="col-md-3" style="float:left">
+         <div class="card mb-2">
+            <img class="card-img-top"
+              src="{% static 'images/java.png' %}" alt="Card image cap">
+              <br>
+              <br>  <br>
+                <br>
+            <div class="card-body">
+              <h4 class="card-title">Java</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-primary">Button</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--/.First slide-->
+
+      <!--Second slide-->
+      <div class="carousel-item">
+
+        <div class="col-md-3" style="float:left">
+          <div class="card mb-2">
+            <img class="card-img-top"
+              src="{% static 'images/Flask.png' %}" alt="Card image cap">
+              <br>
+              <br>  <br>
+                <br>    <br>
+                  <div class="card-body">
+              <h4 class="card-title">Flask</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-primary">Button</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3" style="float:left">
+          <div class="card mb-2">
+            <img class="card-img-top"
+              src="{% static 'images/tableau1.png' %}" alt="Card image cap">
+              <br>
+              <br>  <br>
+
+                <div class="card-body">
+              <h4 class="card-title">Tableau</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-primary">Button</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3" style="float:left">
+          <div class="card mb-2">
+            <img class="card-img-top"
+              src="{% static 'images/python.png' %}" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Python</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-primary">Button</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3" style="float:left">
+          <div class="card mb-2">
+            <img class="card-img-top"
+              src="{% static 'images/RStudio.png' %}" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">RStudio</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-primary">Button</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--/.Second slide-->
+
+
+
+    </div>
+    <!--/.Slides-->
+
+  </div>
+  <!--/.Carousel Wrapper-->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <link rel="stylesheet" href="/resources/demos/style.css">
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script>
+      $( function() {
+        var availableTags = [
+          "ActionScript",
+          "AppleScript",
+          "Asp",
+          "BASIC",
+          "C",
+          "C++",
+          "Clojure",
+          "COBOL",
+          "ColdFusion",
+          "Erlang",
+          "Fortran",
+          "Groovy",
+          "Haskell",
+          "Java",
+          "JavaScript",
+          "Lisp",
+          "Perl",
+          "PHP",
+          "Python",
+          "Ruby",
+          "Scala",
+          "Scheme"
+        ];
+        $( "#tags" ).autocomplete({
+          source: availableTags
+        });
+      } );
+      </script>
+
+</body>
+</html>
