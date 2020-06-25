@@ -25,15 +25,13 @@
         <div class="col-md-4">
 
         </div>
-        <div class="col-md-4 input-group " style="text-align:left">
-          <input id="tags" type="text" style="text-align:left" class="form-control center-block" placeholder="Search your Query">
-          <div id="results"></div>
+        <div class="col-md-4 input-group " style="text-align:center">
+          <input id="tags" type="text" class="form-control center-block" placeholder="Search your Query">
           <div class="input-group-append">
             <button class="btn btn-secondary" type="button">
               <i class="fa fa-search"></i>
             </button>
           </div>
-
         </div>
       </div>
     </form>
@@ -999,9 +997,7 @@
 
       ];
       $("#tags").autocomplete({
-        source: availableTags,
-
-
+        source: availableTags
       });
     });
   </script>

@@ -79,181 +79,126 @@
       <img src="{% static 'images/tabicon.jpg' %}" alt="Trulli" width="50" height="40" class=" mr-5">
           <a class="navbar-brand mr-5" href="#"><b class="text-success">V</b><b class="text-danger">C</b><b>entry Technologies</b></a>
 
-<!-- Refer this https://bootstrap-menu.com/detail-multilevel.html -->
+
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="main_nav">
-
-<ul class="navbar-nav">
-<li class="nav-item mr-5"> <a class="nav-link" href="#">  </a> </li>
-<li class="nav-item mr-5"> <a class="nav-link" href="#">  </a> </li>
-<li class="nav-item mr-5"> <a class="nav-link" href="#">  </a> </li>
-<li class="nav-item dropdown mr-3">
-    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">   Courses </a>
-    <ul class="dropdown-menu">
-
-	  <li><a class="dropdown-item" href="#"> Software Testing Courses &raquo</a>
-		 <ul class="submenu dropdown-menu">
-		    <li><a class="dropdown-item" href=""> Manual Testing</a></li>
-		    <li><a class="dropdown-item" href=""> Automation Testing &raquo</a>
-			         <ul class="submenu dropdown-menu">
-			              <li><a class="dropdown-item" href="{% url 'selenium' %}"> Selenium Java Automation</a></li>
-			              <li><a class="dropdown-item" href=""> Selenium Python Automation</a></li>
-                    <li><a class="dropdown-item" href=""> QTP</a></li>
-                    <li><a class="dropdown-item" href=""> Cypress</a></li>
-                    <li><a class="dropdown-item" href=""> Protractor</a></li>
-                    <li><a class="dropdown-item" href=""> CodedUi</a></li>
-			          </ul>
-		    </li>
-
-        <li><a class="dropdown-item" href=""> Performance Testing &raquo</a>
-			         <ul class="submenu dropdown-menu">
-			              <li><a class="dropdown-item" href=""> Jmeter</a></li>
-			              <li><a class="dropdown-item" href=""> Load Runner</a></li>
-                    <li><a class="dropdown-item" href=""> Neo Load</a></li>
-
-			          </ul>
-		    </li>
-        <li><a class="dropdown-item" href=""> Security Testing &raquo</a>
-			         <ul class="submenu dropdown-menu">
-			              <li><a class="dropdown-item" href=""> Netsparker</a></li>
-			              <li><a class="dropdown-item" href=""> Klocwork</a></li>
-                    <li><a class="dropdown-item" href=""> Burp suite</a></li>
-
-			          </ul>
-		    </li>
-        <li><a class="dropdown-item" href=""> WebServices Testing &raquo</a>
-			         <ul class="submenu dropdown-menu">
-			              <li><a class="dropdown-item" href=""> Rest Assured</a></li>
-			              <li><a class="dropdown-item" href=""> SoapUI</a></li>
-                    <li><a class="dropdown-item" href=""> Postman</a></li>
-
-			          </ul>
-		    </li>
-		    <li><a class="dropdown-item" href=""> Big Testing</a></li>
-		    <li><a class="dropdown-item" href=""> ETL Testing</a></li>
-		 </ul>
-	  </li>
-
-
-<!-- Master Program -->
-
-    <li><a class="dropdown-item" href="#"> Master Program &raquo</a>
-    <ul class="submenu dropdown-menu">
-       <li><a class="dropdown-item" href=""> Manual Testing</a></li>
-       <li><a class="dropdown-item" href=""> Automation Testing &raquo</a>
-              <ul class="submenu dropdown-menu">
-                   <li><a class="dropdown-item" href="{% url 'selenium' %}"> Selenium Java Automation</a></li>
-                   <li><a class="dropdown-item" href=""> Selenium Python Automation</a></li>
-                    <li><a class="dropdown-item" href=""> QTP</a></li>
-                    <li><a class="dropdown-item" href=""> Cypress</a></li>
-                    <li><a class="dropdown-item" href=""> Protractor</a></li>
-                    <li><a class="dropdown-item" href=""> CodedUi</a></li>
-               </ul>
-       </li>
-
-        <li><a class="dropdown-item" href=""> Performance Testing &raquo</a>
-              <ul class="submenu dropdown-menu">
-                   <li><a class="dropdown-item" href=""> Jmeter</a></li>
-                   <li><a class="dropdown-item" href=""> Load Runner</a></li>
-                    <li><a class="dropdown-item" href=""> Neo Load</a></li>
-
-               </ul>
-       </li>
-        <li><a class="dropdown-item" href=""> Security Testing &raquo</a>
-              <ul class="submenu dropdown-menu">
-                   <li><a class="dropdown-item" href=""> Netsparker</a></li>
-                   <li><a class="dropdown-item" href=""> Klocwork</a></li>
-                    <li><a class="dropdown-item" href=""> Burp suite</a></li>
-
-               </ul>
-       </li>
-        <li><a class="dropdown-item" href=""> WebServices Testing &raquo</a>
-              <ul class="submenu dropdown-menu">
-                   <li><a class="dropdown-item" href=""> Rest Assured</a></li>
-                   <li><a class="dropdown-item" href=""> SoapUI</a></li>
-                    <li><a class="dropdown-item" href=""> Postman</a></li>
-
-               </ul>
-       </li>
-       <li><a class="dropdown-item" href=""> Big Testing</a></li>
-       <li><a class="dropdown-item" href=""> ETL Testing</a></li>
-    </ul>
-   </li>
-   <!-- End Master Program -->
-
-
-    </ul>
-</li>
-<li class="nav-item mr-3"> <a class="nav-link" href="#"> Students Zone </a> </li>
-<li class="nav-item mr-3"> <a class="nav-link" href="#"> Services </a> </li>
-<li class="nav-item mr-3"> <a class="nav-link" href="#"> Careers </a> </li>
-<li class="nav-item mr-3"> <a class="nav-link" href="#"> Contact us </a> </li>
-
-
-
-<li class="nav-item dropdown mr-3">
-    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Skill Enhancement </a>
-    <ul class="dropdown-menu">
-
-
-		    <li><a class="dropdown-item" href="{% url 'blog-home' %}"> Online Exam</a></li>
-		    <li><a class="dropdown-item" href="{% url 'labhome' %}" > Lab Practice</a> </li>
-        <li><a class="dropdown-item" href="{% url 'staticqusans' %}"> Interview Questions</a> </li>
-
-
-
-
-		 </ul>
-	  </li>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent1">
 
 
 
 
 
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown mr-5"></li>      <li class="nav-item dropdown mr-5"></li>      <li class="nav-item dropdown mr-5"></li>
 
-    </ul>
-</li>
-
-
-
-
-
-</li>
-
-<!-- <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">  First level 4  </a>
-    <ul class="dropdown-menu">
-	  <li><a class="dropdown-item" href="#"> Second level 1 </a></li>
-	  <li><a class="dropdown-item" href="#"> Second level 2 &raquo </a>
-		 <ul class="submenu dropdown-menu">
-		    <li><a class="dropdown-item" href=""> Third level 1</a></li>
-		    <li><a class="dropdown-item" href=""> Third level 2</a></li>
-		    <li><a class="dropdown-item" href=""> Third level 3 &raquo </a>
-			<ul class="submenu dropdown-menu">
-			    <li><a class="dropdown-item" href=""> Fourth level 1</a></li>
-			    <li><a class="dropdown-item" href=""> Fourth level 2</a></li>
-			</ul>
-		    </li>
-		    <li><a class="dropdown-item" href=""> Second level  4</a></li>
-		    <li><a class="dropdown-item" href=""> Second level  5</a></li>
-		 </ul>
-	  </li>
-	  <li><a class="dropdown-item" href="#"> Dropdown item 3 </a></li>
-	  <li><a class="dropdown-item" href="#"> Dropdown item 4 </a>
-    </ul>
-</li>
-</li> -->
+        <li class="nav-item dropdown mr-3">
+            <a href="#" class="nav-link dropdown-toggle text-white" id="navbarDropdownMenuLink"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Services</span> <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Service A</a></li>
+                <li><a class="dropdown-item" href="#">Service B</a></li>
+                <li class="dropdown-submenu">
+                    <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Service C</span><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Service C1</a></li>
+                        <li><a class="dropdown-item" href="#">Service C2</a></li>
+                        <li><a class="dropdown-item" href="#">Service C3</a></li>
+                        <li><a class="dropdown-item" href="#">Service C4</a></li>
+                        <li><a class="dropdown-item" href="#">Service C5</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
 
 
-</ul>
+        <li class="nav-item dropdown mr-3">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            About us
+          </a>
+          <div class=" dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="nav-link dropdown-toggle ml-3 text-dark" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              About us
+            <span class="caret"></span></a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Action1</a>
+              <a class="dropdown-item" href="#">Another action1</a>
+              <a class="dropdown-item" href="#">Something else here1</a>
+            </div>
+          </div>
+        </li>
 
-</div> <!-- navbar-collapse.// -->
+        <li class="nav-item dropdown mr-3">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Courses
+          </a>
+          <div style="background-color:#292929 " class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item bg-dark text-white" href="{% url 'selenium' %}">Selenium</a>
+            <a class="dropdown-item bg-dark text-white" href="#">Another action</a>
+            <a class="dropdown-item bg-dark text-white" href="#">Something else here</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown mr-3">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+            Students Zone
+          </a>
+          <div style="background-color:#292929 " class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+            <a class="dropdown-item bg-dark text-white" href="{% url 'blog-home' %}">Online Exams</a>
+
+            <a class="dropdown-item bg-dark text-white" href="{% url 'staticqusans' %}">Interview Questions</a>
 
 
+            <a class="dropdown-item bg-dark text-white" href="{% url 'labhome' %}">Lab Exercises</a>
+          </div>
+        </li>
+
+
+        <li class="nav-item dropdown mr-3">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Services
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown mr-3">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Careers
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown mr-3">
+
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Contact Us
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+
+          </div>
+        </li>
+      </ul>
+
+
+
+
+  </div>
 </nav>
 
 
@@ -490,31 +435,6 @@
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
       <script>
       $( function() {
-
-// navbar start
-
-        $(document).on('click', '.dropdown-menu', function (e) {
-  e.stopPropagation();
-});
-
-// make it as accordion for smaller screens
-if ($(window).width() < 992) {
-  $('.dropdown-menu a').click(function(e){
-    e.preventDefault();
-      if($(this).next('.submenu').length){
-        $(this).next('.submenu').toggle();
-      }
-      $('.dropdown').on('hide.bs.dropdown', function () {
-     $(this).find('.submenu').hide();
-  })
-  });
-}
-
-
-// navbar end
-
-
-
         var availableTags = [
           "Blue Prism Training",
           "UiPath Training",
