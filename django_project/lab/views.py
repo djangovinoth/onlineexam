@@ -217,3 +217,49 @@ def progressbar(request):
 def tabs(request):
 
     return render(request, 'elements/tabs.html')
+
+
+def simpleform(request):
+
+    if request.method == 'POST':
+
+        messages.success(request, f'{request.POST.get("product")} submitted successfully !')
+    context={
+
+    'max':False,
+
+    }
+    return render(request, 'framework/simpleform.html',context)
+
+def loginform(request):
+    max=False
+    user=""
+    checkout=False
+    count=0
+    if count==0:
+        max=False
+
+
+    if request.method == 'POST':
+        if request.POST.get("username"):
+            user=request.POST.get("username")
+            messages.success(request, f'{request.POST.get("username")} login successfully !')
+        elif request.POST.get("product"):
+            count=int(request.POST.get("count"))
+            count=count+1
+            if count<5:
+                messages.success(request, f'{request.POST.get("product")} {count} submitted successfully !')
+            else:
+                messages.success(request, f'{user} reached max count !')
+                max=True
+        elif request.POST.get("coupon"):
+                messages.success(request, f'{user} You have done checkout !')
+                checkout=True
+        context={
+        'count':count,
+        'max':max,
+        'checkout':checkout,
+        }
+        return render(request, 'framework/simpleform.html',context)
+
+    return render(request, 'framework/loginform.html')

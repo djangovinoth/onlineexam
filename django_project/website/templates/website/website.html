@@ -496,7 +496,7 @@
 
           <div class="col-md-2 ml-5 border border-secondary" style="float:left">
             <div class="card mb-2 border-0">
-              <img class="card-img-top" height="230" src="{% static 'images/java.png' %}" alt="Card image cap">
+              <img class="card-img-top" height="230" src="{% static 'images/Java.png' %}" alt="Card image cap">
 
               <div class="card-body">
                 <h4 class="card-title">Java</h4>
@@ -598,15 +598,15 @@
   <hr>
 
   <br>
-  <div class="row col-md-24" style="background-color:#0777be">
+  <div class="row col-md-24 " style="background-color:#0777be;">
 
 
-    <div class="col-md-4 ml-5 mt-4" style="text-align:center">
+    <div class="col-md-4 ml-5 mt-4" style="text-align:center;">
       <br>
-      <h4><b style=" border-bottom: 5px solid DARKSLATEGRAY;padding: 0 0 4px;">Upcoming Batches </b></h4>
+      <h4 style="color:white"><b style=" border-bottom: 5px solid DARKSLATEGRAY;padding: 0 0 4px;">Upcoming Batches </b></h4>
       <br>
 
-      <div class="content-section col-md-12 mr-5">
+      <div class="content-section col-md-12 mr-5" style="color:#e5d651;">
 
 
 
@@ -614,7 +614,7 @@
 
 
           <tr border="1">
-            <td rowspan="2">June 30th</td>
+            <td rowspan="2"> <p id="date1"></p> </td>
             <th colspan="2" scope="colgroup">
               <p>Selenium Online Training</p>
             </th>
@@ -638,7 +638,7 @@
 
 
           <tr border="1">
-            <td rowspan="2">June 30th</td>
+            <td rowspan="2"><p id="date2"></p> </td>
             <th colspan="2" scope="colgroup">
               <p>Selenium Online Training</p>
             </th>
@@ -657,6 +657,33 @@
 
 
         </table>
+
+  <hr>
+        <table class="col-md-12 ml-5">
+
+
+          <tr border="1">
+            <td rowspan="2"><p id="date3"></p> </td>
+            <th colspan="2" scope="colgroup">
+              <p>Selenium Online Training</p>
+            </th>
+
+          </tr>
+          <tr>
+            <th scope="col">
+              <p><i class="fa fa-map-marker" aria-hidden="true"> Online </i>
+                <i class="fa fa-phone" aria-hidden="true"> : 9500434122</i>
+              </p>
+            </th>
+
+          </tr>
+
+
+
+
+        </table>
+
+        <p id="demo"></p>
       </div>
 
 
@@ -671,7 +698,7 @@
 
       <div class="col-md-10  mr-5" style="background-color:#0777be">
         <br>
-        <h4><b style=" border-bottom: 5px solid DARKSLATEGRAY;padding: 0 0 4px;">For Enquiry Fill the form </b></h4>
+        <h4 style="color:white"><b style=" border-bottom: 5px solid DARKSLATEGRAY;padding: 0 0 4px;">For Enquiry Fill the form </b></h4>
         <br>
 
 
@@ -867,144 +894,9 @@
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-    $(function() {
-      var availableTags = [
-        "Blue Prism Training",
-        "UiPath Training",
-        "Automation Anywhere Training",
-        "Azure Training",
-        "AWS Training",
-        "Salesforce Training",
-        "Google Cloud Platform Training",
-        "OpenNebula Training",
-        "OpenSpan Training",
-        "OpenStack Training",
-        "Implementing Microsoft Azure Infrastructure Solutions Training",
-        "Hadoop Training",
-        "Big Data Analytics Training",
-        "Apache Spark Training",
-        "AngularJS Training",
-        "Angular 7 Training",
-        "Angular 8 Training",
-        "Angular 9 Training",
-        "JavaScript Training",
-        "Node JS Training",
-        "React JS Training",
-        "React Native Training"
-
-        "Ionic Framework Training",
-        "Less JS Training",
-        "CofeeScript Training"
-
-        "PHP Training",
-        "Full Stack Developer Training",
-        "Graphic Design Training"
-
-        "CSS Training",
-        "HTML Training",
-        "ASP.NET MVC + AngularJS Training",
-        "Android Training",
-        "iOS Training",
-        "Swift Programming Training",
-
-        "Kotlin Training",
-        "Flutter Dart Training",
-        "Python Training",
-        "Data Science Training",
-        "R Programming Training",
-        "DevOps Training",
-        "IoT Training",
-        "Machine Learning Training",
-        "Blockchain Training",
-        "MEAN Stack Training ",
-        "Artificial Intelligence Training",
-        "Data Analytics Using Python Training",
-        "RPA-TRAINING",
-
-        "Manual Testing Training",
-        "QTP / UFT Training ",
-        "Selenium Training",
-        "Selenium with Python Training",
-        "Perfecto Mobile Testing Training",
-
-        "ETL Testing Training",
-        "JMeter Training ",
-        "LoadRunner Training",
-        "Performance Engineering Training",
-        "Big Data Testing Training",
-
-        "Protractor Automation",
-        "Dot Net Training ",
-        "ASP.NET MVC Training",
-        "ASP.NET with Angular Training",
-        "SharePoint Training",
-        "Advanced Excel Training ",
-        "Microsoft Excel Macro Training ",
-        "Core Java Training ",
-        "Java J2EE Training ",
-        "Advanced Java Training ",
-        "Hibernate Training ",
-        "Spring Training ",
-        "Struts Training ",
-        "Java 8 Training ",
-        "Primavera P6 Training ",
-        "Microsoft Project Training ",
-        "PMP Training ",
-        "Scrum Master Training ",
-        "Business Analytics Training ",
-        "ITIL Training ",
-        "Prince2 Training ",
-        "MSBI SSIS Training ",
-        "MSBI SSAS Training ",
-        "MSBI SSRS Training ",
-        "Informatica Training ",
-        "Microstrategy Training ",
-        "Qlikview Training ",
-
-        "Qlik Sense Training ",
-        "Tableau Training ",
-        "Teradata Training ",
-        "SAS Training ",
-        "Cognos Training ",
-        "Oracle PL/SQL Training ",
-        "Oracle DBA Training ",
-        "Oracle Application Technical Training ",
-        "ORACLE RAC Training ",
-        "ORACLE APPS SCM Training ",
-        "Oracle Apps HRMS Training ",
-        "Oracle Apps Finance Training ",
-        "PeopleSoft HCM Training ",
-        "PeopleSoft Finance Training ",
-        "MongoDB Training ",
-        "Apache Cassandra Training ",
-        "Sybase Training ",
-        "Informix Training ",
-        "Performance Tuning Training ",
-        "Ethical Hacking Training ",
-        "C C++ Training ",
-        "Data Modeling Training ",
-        "Unix Shell Training ",
-        "Tensorflow Training ",
-        "Workday Training ",
-        "PEGA Training ",
-        "CCNA Training ",
-        "Digital Marketing Training ",
-        "Go Programming Training ",
-        "Arduino Training ",
-        "Rust Programming Training ",
-        "ELM Training ",
-        "Cyber Security Training ",
-        "BizTalk Server Training ",
-
-      ];
-      $("#tags").autocomplete({
-        source: availableTags,
 
 
-      });
-    });
-  </script>
+
 
 </body>
 

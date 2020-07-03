@@ -19,9 +19,9 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
 
     {% if title %}
-         <title>Django Blog - {{ title }}</title>
+         <title>Vcentry - {{ title }}</title>
     {% else %}
-         <title>Django Blog</title>
+         <title>VCentry</title>
     {% endif %}
 </head>
 <body class="bg-white" style="overflow-x: hidden;">
@@ -77,7 +77,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark  " style="background-color:#292929 " >
       <img src="{% static 'images/tabicon.jpg' %}" alt="Trulli" width="50" height="40" class=" mr-5">
-          <a class="navbar-brand mr-5" href="#"><b class="text-success">V</b><b class="text-danger">C</b><b>entry Technologies</b></a>
+          <a class="navbar-brand mr-5" href="{%url 'websitehome'%}"><b class="text-success">V</b><b class="text-danger">C</b><b>entry Technologies</b></a>
 
 <!-- Refer this https://bootstrap-menu.com/detail-multilevel.html -->
 
@@ -85,7 +85,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="main_nav">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent1">
 
 <ul class="navbar-nav">
 <li class="nav-item mr-5"> <a class="nav-link" href="#">  </a> </li>
@@ -488,6 +488,28 @@
       <link rel="stylesheet" href="/resources/demos/style.css">
       <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script>
+
+      var month = new Array();
+      month[0] = "Jan";
+      month[1] = "Feb";
+      month[2] = "Mar";
+      month[3] = "Apr";
+      month[4] = "May";
+      month[5] = "June";
+      month[6] = "July";
+      month[7] = "Aug";
+      month[8] = "Sep";
+      month[9] = "Oct";
+      month[10] = "Nov";
+      month[11] = "Dec";
+      var1=new Date().getMonth()+2
+      var1=new Date().getMonth()+2
+
+     document.getElementById("date1").innerHTML = (new Date().getDate()-2)+"-"+month[(new Date().getMonth()+1)]+"-"+new Date().getFullYear()
+     document.getElementById("date2").innerHTML = (new Date().getDate()-4)+"-"+month[(new Date().getMonth()+1)]+"-"+new Date().getFullYear()
+     document.getElementById("date3").innerHTML = (new Date().getDate()-7)+"-"+month[(new Date().getMonth()+2)]+"-"+new Date().getFullYear()
+</script>
       <script>
       $( function() {
 

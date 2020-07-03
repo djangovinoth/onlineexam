@@ -28,6 +28,9 @@ urlpatterns = [
     path('brokenimage/', views.brokenimage, name='brokenimage'),
 
 
+    path('simpleform/', views.simpleform, name='simpleform'),
+    path('loginform/', views.loginform, name='loginform'),
+
     path('input/', views.input, name='input'),
     path('checkbox/', views.checkbox, name='checkbox'),
     path('radiobutton/', views.radiobutton, name='radiobutton'),

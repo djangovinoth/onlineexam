@@ -1,0 +1,366 @@
+{% extends "lab/labhome.html" %}
+{% load static %}
+
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+<li class="nav-item ">
+<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+aria-selected="true">Product Purchase</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+aria-selected="false">Check out</a>
+</li>
+
+</ul>
+
+
+
+
+<div class="tab-content" id="myTabContent">
+
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+    <div class="row">
+
+
+    <div class="col-md-8 mt-4" style="text-align:center">
+
+
+    <div class="content-section">
+        {%if max is False%}
+        <form method="post">
+            {%csrf_token%}
+          <br>
+          <div class="row ">
+            <div class="col-md-8">
+              <div class="row">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-4">
+
+                </div>
+                <div class="col-md-6">
+                <p>Your Total Purchase count: {{count}}</p>
+
+                <input type="text" name="count" hidden=true value="{{count}}">
+                </div>
+
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-4">
+                  <label for="id0">Product Name :</label>
+                </div>
+                <div class="col-md-6">
+                  <input class="form-control" type="text" id="id0" name="product" value="" required>
+
+
+                </div>
+
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-4">
+                  <label for="id1">Mobile :</label>
+                </div>
+                <div class="col-md-6">
+                  <input class="form-control" type="text" id="id1" name="mobile" value="" required>
+                  <br>
+
+                </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-4">
+                  <label for="id2">Email :</label>
+                </div>
+                <div class="col-md-6">
+                  <input class="form-control" type="text" id="id2" name="email" value="" required>
+                </div>
+              </div>
+
+
+              <br>
+              <div class="row">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-4">
+                  <label for="id3">Product Cetagory :</label>
+                </div>
+                <div class="col-md-6">
+                  <select class="form-control" name="cars"  id="id3" required>
+                  <option value="HouseHold">House Hold</option>
+                  <option value="Electronics">Electronics</option>
+                  <option value="Electrical">Electrical</option>
+                  <option value="Vehicle">Vehicle</option>
+                </select>
+                            </div>
+              </div>
+
+
+              <br>
+              <div class="row">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-4">
+                  <label for="id4">Product Quantity :</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="number" class="form-control" id="id4" name="points" required>
+                            </div>
+              </div>
+
+              <br>
+              <div class="row">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-4">
+                  <label for="id5">Purchaser Name :</label>
+                </div>
+                <div class="col-md-6">
+                  <input class="form-control" type="text" id="id5" name="purchaser" value="" required>
+                  <br>
+
+                </div>
+
+              </div>
+
+
+              <br>
+              <div class="row">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-4">
+                  <label for="id6">GST applied :</label>
+                </div>
+                <div class="col-md-3">
+
+                  <label for="idyes">Yes</label>
+
+                  <input class="form-control" type="radio" id="idyes" name="gst" value="Yes" required>
+
+                  <br>
+
+                </div>
+
+                <div class="col-md-3">
+
+
+                      <label for="idno">No</label>
+                  <input class="form-control" type="radio" id="idno" name="gst" value="No" required>
+                  <br>
+
+                </div>
+
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-4">
+                  <label for="id6">Available Payment :</label>
+                </div>
+                <div class="col-md-3">
+
+                  <label for="idyes">COD</label>
+
+                  <input class="form-control" type="checkbox" id="cod" name="cod" >
+
+                  <br>
+
+                </div>
+
+                <div class="col-md-3">
+
+
+                      <label for="idno">Net Banking</label>
+                  <input class="form-control" type="checkbox" id="netbank" name="netbank" >
+                  <br>
+
+                </div>
+
+
+              </div>
+
+
+
+              <div class="row">
+                <div class="col-md-6">
+                  <!-- <button class="btn btn-info" onclick="addWebElement()">Add More</button> -->
+
+
+                </div>
+                <div class="col-md-4">
+                  <button type="submit" class="btn btn-info" id="order" name="button">Place Order</button>
+                </div>
+
+
+              </div>
+
+              <br>
+
+
+
+            </div>
+
+          </div>
+        </form>
+        {%else%}
+        <h2>Sorry You have reached your max Purchase count of the day. Kindly Check out Please</h2>
+        {%endif%}
+
+
+    </div>
+    </div>
+
+
+
+
+
+
+  </div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="col-md-8 mt-4" style="text-align:center">
+
+    <div class="content-section">
+        {%if checkout is False%}
+        <form method="post">
+            {%csrf_token%}
+          <br>
+          <div class="row ">
+            <div class="col-md-8">
+              <div class="row">
+                <div class="col-md-6">
+<p>Your Total Purchase count: {{count}}</p>
+                </div>
+
+                <div class="col-md-6">
+
+                  {%if count is 0%}
+                  <p>Total Cost : 0</p>
+                  {%else%}
+                  <p>Total Cost : {% now "is" %}</p>
+                  {%endif%}
+                <input type="text" name="count" hidden=true value="{{count}}">
+                </div>
+
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-4">
+                  <label for="id20">Coupon code  :</label>
+                </div>
+                <div class="col-md-6">
+                  <input class="form-control" type="text" id="id20" name="coupon" value="" required>
+
+
+                </div>
+
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-4">
+                  <label for="id21">Delivery Address :</label>
+                </div>
+                <div class="col-md-6">
+                  <textarea name="name"  rows="8" cols="80" class="form-control" type="text" id="id21" name="address" value="" required></textarea>
+                  <br>
+
+                </div>
+
+              </div>
+
+
+
+
+
+
+
+
+              <div class="row">
+                <div class="col-md-6">
+
+                </div>
+                <div class="col-md-4">
+                  <button type="submit" class="btn btn-info" id="id23" name="button">Checkout</button>
+                </div>
+
+
+              </div>
+
+              <br>
+
+
+
+            </div>
+
+          </div>
+        </form>
+        {%else%}
+        <h2>Check Out successfully done!</h2>
+        {%endif%}
+
+
+    </div>    </div>
+
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+{%endblock%}
+{%block script%}
+
+
+  <script type="text/javascript">
+
+function addWebElement() {
+$("<button style='margin-right:16px' class='added-manually btn btn-info mt-2' onclick='deleteWebElement()'>Delete</button>").appendTo('#webelements');
+}
+function deleteWebElement() {
+$('#webelements button:first-child').remove();
+}
+      </script>
+
+
+
+{%endblock%}

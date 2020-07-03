@@ -1,0 +1,74 @@
+{% extends "lab/labhome.html" %}
+{% load static %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+
+<div class="col-md-8 mt-4" style="text-align:center">
+      <p >Login</p>
+
+<div class="content-section">
+
+    <form method="post">
+        {%csrf_token%}
+      <br>
+      <div class="row ">
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-4">
+              <label for="id0">User Name :</label>
+            </div>
+            <div class="col-md-6">
+              <input class="form-control" type="text" id="id0" name="username" value="" required>
+
+
+            </div>
+
+          </div>
+
+          <br>
+
+          <div class="row">
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-4">
+              <label for="id1">Password :</label>
+            </div>
+            <div class="col-md-6">
+              <input class="form-control" type="text" id="id1" name="password" value="" required>
+              <br>
+
+            </div>
+
+          </div>
+
+          <br>
+          <div class="row">
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-4">
+              <button type="submit" class="btn btn-info" name="button">Login</button>
+            </div>
+
+
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </form>
+
+
+
+</div>
+</div>
+
+
+
+{%endblock%}
