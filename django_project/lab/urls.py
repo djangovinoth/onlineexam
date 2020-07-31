@@ -26,7 +26,7 @@ urlpatterns = [
 
     path('SingleAndMultiImage/', views.SingleAndMultiImage, name='SingleAndMultiImage'),
     path('brokenimage/', views.brokenimage, name='brokenimage'),
-
+    path('xpath/', views.xpath, name='xpath'),
 
     path('simpleform/', views.simpleform, name='simpleform'),
     path('loginform/', views.loginform, name='loginform'),

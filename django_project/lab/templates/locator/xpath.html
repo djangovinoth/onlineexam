@@ -1,0 +1,185 @@
+{% extends "lab/labhome.html" %}
+{%block title %}Drag and Drop{%endblock%}
+{%block content%}
+
+<div class="row">
+
+
+  <div class="col-md-6">
+    <div class="content-section">
+    <label for="abspath">Absolute xpath</label>
+    <input type="text" name="" id="abspath" value="">
+</div>
+
+
+</div></div>
+
+
+<div class="row">
+
+
+  <div class="col-md-6">
+    <div class="content-section">
+    <ul id="ulid1">
+      <li>food
+        <ul>
+        <li>fruits
+          <ul>
+            <li>Apple
+              <ul>
+                <li>Green Apple </li>
+                <li>Red Apple </li>
+              </ul>
+            </li>
+            <li>Banana
+              <ul>
+                <li>Yellow Banana</li>
+                <li>Green Banana</li>
+              </ul>
+            </li>
+                        <li>Grapes
+
+                        <ul>
+
+                          <li>Green grapes</li>
+                          <li>black grapes</li>
+                        </ul></li>
+          </ul>
+        </li>
+        <li>juices
+          <ul>
+            <li>Orange Juice</li>
+            <li>Cranberry Juice</li>
+                        <li>Pineapple Juice</li>
+          </ul>
+
+        </li>
+        <li>special dishes
+          <ul>
+            <li>tamil nadu dishes</li>
+                    <li>north indian dishes</li>
+                            <li>Andra dishes</li>
+                                <li>Keral dishes</li>
+            <li>Karnataga dishes</li>
+                <li>Oodis dishes</li>
+          </ul>
+        </li>
+        </ul>
+      </li>
+
+
+
+    </ul>
+</div>
+
+
+</div></div>
+
+
+<div class="row">
+
+
+
+<div class="col-md-6">
+  <div class="content-section">
+  <label for="abspath">Relative xpath</label>
+  <input type="text" name="" id="abspath" value="">
+</div>
+</div>
+
+</div>
+
+<div class="row">
+
+
+  <div class="col-md-12">
+    <div class="content-section">
+    <a href="#" class="mr-3" title="your link1" id="linkid1" name="linkname1">link1</a>
+    <a href="#" class="mr-3" title="your link2" id="linkid2" name="linkname2">link2</a>
+    <a href="#" class="mr-3" title="your link3" id="linkid3" name="linkname3">link3</a>
+    <a href="#" class="mr-3" title="your link4" id="linkid4" name="linkname4">link4</a>
+    <a href="#" class="mr-3" title="your link5" id="linkid5" name="linkname5">link5</a>
+    <a href="#" class="mr-3" title="your link6" id="linkid6" name="linkname6">link6</a>
+    <a href="#" class="mr-3" title="your link7" id="linkid7" name="linkname7">link7</a>
+
+    <a class="mr-3" title="your left1" id="leftid1" name="leftname1">Left</a>
+    <input class="mr-3" type="text" name="input1" placeholder="Fill this..." title="Fill this" value="">
+    <button class="mr-3 btn btn-info" type="button" name="button1">Submit</button>
+    <a class="mr-3" title="your right1" id="rightid1" name="rightname1">Right</a>
+    <a href="#" class="mr-3" title="your link8" id="linkid8" name="linkname8">link8</a>
+    <a href="#" class="mr-3" title="your link9" id="linkid9" name="linkname9">link9</a>
+    <a href="#" class="mr-3" title="your link10" id="linkid10" name="linkname10">link10</a>
+    <a href="#" class="mr-3" title="your link11" id="linkid11" name="linkname11">link11</a>
+    <a href="#" class="mr-3" title="your link12" id="linkid12" name="linkname12">link12</a>
+    <a href="#" class="mr-3" title="your link13" id="linkid13" name="linkname13">link13</a>
+    <a href="#" class="mr-3" title="your link14" id="linkid14" name="linkname14">link14</a>
+</div>
+
+
+</div></div>
+
+<div class="row">
+
+
+
+<div class="col-md-6">
+  <div class="content-section">
+    <p>Xpath Construction syntax</p>
+      <label style="color:green" for="id1"><b>1 :- </b> <b> Find the element by attribute</b></label>
+    <p id="id1"> <b style="color:red">.//tagname[@attribute='attribute Value']</b></p>
+    <hr>
+    <label style="color:green" for="id2"><b>2 :- </b> <b> Find the element by attribute using CONTAINS Function</b></label>
+
+    <p id="id2"> <b>2 :- </b> <b style="color:red">.//tagname[contains(@attribute,'attribute Value')]</b></p>
+
+<hr>
+    <label style="color:green" for="id3"><b>3 :- </b> <b> Find the element by attribute using STARTS-WITH Function</b></label>
+
+    <p id="id3"> <b>3 :- </b> <b style="color:red">.//tagname[starts-with(@attribute,'attribute Value')]</b></p>
+    <hr>
+    <label style="color:green" for="id4"><b>4 :- </b> <b> Find the element by attribute using ENDS-WITH Function</b></label>
+    <p id="id4"> <b>4 :- </b> <b style="color:red">.//tagname[ends-with(@attribute,'attribute Value')]</b></p>
+    <hr>
+
+    <label style="color:green" for="id5"><b>5 :- </b> <b> Find the element by  text</b></label>
+    <p id="id5"> <b>5 :- </b> <b style="color:red">.//tagname[text()='matched text']</b></p>
+    <hr>
+    <label style="color:green" for="id6"><b>6 :- </b> <b> Find the element by text using contains function</b></label>
+    <p id="id6"> <b>6 :- </b> <b style="color:red">.//tagname[contains(text(),'matched text')]</b></p>
+    <hr>
+    <label style="color:green" for="id7"><b>7 :- </b> <b> Find the element by text using starts-with function</b></label>
+    <p id="id7"> <b>7 :- </b> <b style="color:red">.//tagname[starts-with(text(),'matched text')]</b></p>
+    <hr>
+    <label style="color:green" for="id8"><b>8 :- </b> <b> Find the element by text using ends-with function</b></label>
+    <p id="id8"> <b>8 :- </b> <b style="color:red">.//tagname[ends-with(text(),'matched text')]</b></p>
+    <hr>
+    <label style="color:green" for="id9"><b>9 :- </b> <b> Find the element using following tag</b></label>
+    <p id="id9"> <b>9 :- </b> <b style="color:red">.//tagname[text(),'matched text']/following::searchtag</b></p>
+    <hr>
+
+    <label style="color:green" for="id10"><b>10 :- </b> <b> Find the element using following multiple tags</b></label>
+    <p id="id10"> <b>10 :- </b> <b style="color:red">.//tagname[text(),'matched text']/following::searchtag[1]</b></p>
+    <hr>
+
+    <label style="color:green" for="id11"><b>11 :- </b> <b> Find the element using preceding  tag</b></label>
+
+    <p id="id11"> <b>11 :- </b> <b style="color:red">.//tagname[ends-with(text(),'matched text')]/preceding::searchtag</b></p>
+    <hr>
+    <label style="color:green" for="id12"><b>12 :- </b> <b> Find the element using preceding  tag</b></label>
+
+    <p id="id12"> <b>12 :- </b> <b style="color:red">.//tagname[text(),'matched text']/preceding::searchtag</b></p>
+    <hr>
+
+    <label style="color:green" for="id13"><b>13 :- </b> <b> Find the element using preceding  tag</b></label>
+
+    <p id="id13"> <b>13 :- </b> <b style="color:red">.//tagname[text(),'matched text']/preceding::searchtag[1]</b></p>
+    <hr>
+</div>
+</div>
+
+</div>
+
+
+
+
+{%endblock%}

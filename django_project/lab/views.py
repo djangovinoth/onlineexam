@@ -219,6 +219,14 @@ def tabs(request):
     return render(request, 'elements/tabs.html')
 
 
+def xpath(request):
+
+    return render(request, 'locator/xpath.html')
+
+
+
+
+
 def simpleform(request):
 
     if request.method == 'POST':
